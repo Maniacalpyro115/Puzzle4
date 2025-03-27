@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Puzzle4/static/css/main.88a30c87.css",
-    "main.js": "/Puzzle4/static/js/main.c1738432.js",
-    "static/js/453.bf372cf6.chunk.js": "/Puzzle4/static/js/453.bf372cf6.chunk.js",
-    "static/media/Undertale.jpg": "/Puzzle4/static/media/Undertale.0e739b651efaaa5d2a77.jpg",
-    "index.html": "/Puzzle4/index.html",
-    "main.88a30c87.css.map": "/Puzzle4/static/css/main.88a30c87.css.map",
-    "main.c1738432.js.map": "/Puzzle4/static/js/main.c1738432.js.map",
-    "453.bf372cf6.chunk.js.map": "/Puzzle4/static/js/453.bf372cf6.chunk.js.map"
+    "main.css": "/static/css/main.88a30c87.css",
+    "main.js": "/static/js/main.4d1efbe2.js",
+    "static/js/453.bf372cf6.chunk.js": "/static/js/453.bf372cf6.chunk.js",
+    "static/media/Undertale.jpg": "/static/media/Undertale.0e739b651efaaa5d2a77.jpg",
+    "index.html": "/index.html",
+    "main.88a30c87.css.map": "/static/css/main.88a30c87.css.map",
+    "main.4d1efbe2.js.map": "/static/js/main.4d1efbe2.js.map",
+    "453.bf372cf6.chunk.js.map": "/static/js/453.bf372cf6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.88a30c87.css",
-    "static/js/main.c1738432.js"
+    "static/js/main.4d1efbe2.js"
   ]
 }
