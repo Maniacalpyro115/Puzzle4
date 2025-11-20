@@ -9,22 +9,31 @@
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
       background: #f2f2f2;
     }
+
     .container {
       text-align: center;
+      padding: 20px;
+      max-width: 900px;
     }
+
     h1 {
       margin-bottom: 20px;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(20, 30px);
-      grid-template-rows: repeat(10, 30px);
+      grid-auto-rows: 30px;
       gap: 2px;
+      justify-content: center;
+      margin-bottom: 20px;
     }
+
     .cell {
       width: 30px;
       height: 30px;
@@ -35,51 +44,84 @@
       align-items: center;
       font-size: 18px;
       user-select: none;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .word-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 10px 30px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .word-item {
+      padding: 6px 10px;
+      border-radius: 4px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>November 20th Puzzle</h1>
-    <div class="grid">
-      <!-- 10x20 grid of Q's -->
-      <!-- Row generation -->
-      <!-- Each row has 20 Q cells, repeated for 10 rows -->
-      <!-- Total 200 cells -->
-      <!-- Manually repeating for clarity -->
 
-      <!-- Row 1 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 2 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 3 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 4 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 5 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 6 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 7 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 8 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 9 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-      <!-- Row 10 -->
-      <div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div><div class="cell">Q</div>
-    </div>
+    <!-- Visual grid rendered from GRID_TEXT below -->
+    <div id="grid" class="grid"></div>
+
     <h2>Word List</h2>
-    <ul>
-      <li>WORDONE</li>
-      <li>WORDTWO</li>
-      <li>WORDTHREE</li>
-      <li>WORDFOUR</li>
-      <li>WORDFIVE</li>
-      <li>WORDSIX</li>
-      <li>WORDSEVEN</li>
-      <li>WORDEIGHT</li>
-    </ul>
+    <div class="word-list">
+      <div class="word-item">OBISCWTPDNDWMFT</div>
+      <div class="word-item">TARHUN</div>
+      <div class="word-item">BUCKY</div>
+      <div class="word-item">BLOOD HUNTER</div>
+      <div class="word-item">BRAVOUROS</div>
+      <div class="word-item">CHATGPT</div>
+      <div class="word-item">STRAHD</div>
+      <div class="word-item">PANTHER</div>
+    </div>
   </div>
+
+  <script>
+    const GRID_TEXT = `QQQQQQQQQQQQQQQQQQQQ
+QQCHATGPTQQQQQQQQQQQ
+QQQQOBISCWTPDNDWMFTQ
+QQQQQQQQQQQQQQQQPQQQ
+QQQBLOOD HUNTERQAQQT
+QQQQUQQQQQQQQQQQNQQA
+QQQQQCQBUCKYQQQQTQQR
+QQQQQQKQQQQQQQQQHQQH
+QSTRAHDYQQQQQQQQEQQU
+BRAVOUROSQQQQQQQRQQN`;
+
+    function renderGridFromText() {
+      const grid = document.getElementById("grid");
+      const lines = GRID_TEXT.split(/\r?\n/).filter(line => line.trim() !== "");
+
+      const numRows = 10;
+      const numCols = 20;
+
+      grid.innerHTML = "";
+
+      for (let r = 0; r < numRows; r++) {
+        const rowText = (lines[r] || "").padEnd(numCols, " ").slice(0, numCols);
+        for (let c = 0; c < numCols; c++) {
+          const cell = document.createElement("div");
+          cell.className = "cell";
+          cell.textContent = rowText[c] || " ";
+          grid.appendChild(cell);
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", renderGridFromText);
+  </script>
 </body>
 </html>
