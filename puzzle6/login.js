@@ -24,6 +24,8 @@ async function login() {
 
     if (data.error) {
       document.getElementById("result").innerText = data.error;
+    } else if (data.next) {
+      window.location.href = data.next;
     } else {
       document.getElementById("result").innerText = data.message;
     }
