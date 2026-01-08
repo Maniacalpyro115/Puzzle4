@@ -6,7 +6,7 @@ async function login() {
 
   try {
     const response = await fetch(
-      "https://YOUR-BACKEND.onrender.com/login",
+      "https://puzzle6-api.onrender.com/login",
       {
         method: "POST",
         headers: {
