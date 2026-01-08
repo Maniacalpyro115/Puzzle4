@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Login Portal</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      font-family: system-ui;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login {
+      background: #020617;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 300px;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login">
+  <h2>Login</h2>
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Sign In</button>
+  <p id="result"></p>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
