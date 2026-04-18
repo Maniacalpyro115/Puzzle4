@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&D Character Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <h1>D&D Character Builder</h1>
+
+    <div class="top-grid">
+      <div class="field">
+        <label for="classSelect">Class</label>
+        <select id="classSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="subclassSelect">Subclass</label>
+        <select id="subclassSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="levelInput">Level</label>
+        <input id="levelInput" type="number" min="1" max="20" value="1" />
+      </div>
+
+      <div class="field">
+        <label for="backgroundSelect">Background</label>
+        <select id="backgroundSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="alignmentSelect">Alignment</label>
+        <select id="alignmentSelect">
+          <option>Lawful Good</option>
+          <option>Neutral Good</option>
+          <option>Chaotic Good</option>
+          <option>Lawful Neutral</option>
+          <option>True Neutral</option>
+          <option>Chaotic Neutral</option>
+          <option>Lawful Evil</option>
+          <option>Neutral Evil</option>
+          <option>Chaotic Evil</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <div class="panel">
+        <div class="panel-title">Ability Scores</div>
+        <div id="abilityList" class="ability-list"></div>
+        <div class="point-buy">
+          Points Remaining: <span id="pointsRemaining">27</span>
+        </div>
+        <div class="small-note" style="margin-top:8px;">
+          Uses standard 27-point buy from 8 to 15.
+        </div>
+      </div>
+
+      <div class="center-stack">
+        <div class="panel">
+          <div class="panel-title">Derived Stats</div>
+          <div class="derived-grid">
+            <div class="derived-box">
+              <div class="label">Proficiency</div>
+              <div class="value" id="profBonus">+2</div>
+            </div>
+            <div class="derived-box">
+              <div class="label">Initiative</div>
+              <div class="value" id="initiative">+0</div>
+            </div>
+            <div class="derived-box">
+              <div class="label">Passive Perception</div>
+              <div class="value" id="passivePerception">10</div>
+            </div>
+            <div class="derived-box">
+              <div class="label">Chosen Skills</div>
+              <div class="value" id="chosenSkillsCount">0/0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Proficiencies</div>
+          <div id="proficienciesBlock" class="proficiency-groups"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Skills</div>
+          <div class="skills-header" id="skillsHeader">
+            Pick a class to load valid skill proficiencies.
+          </div>
+          <div id="skillsGrid" class="skills-grid"></div>
+          <div id="skillStatus" class="status"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Features</div>
+          <div id="featuresBlock" class="feature-list"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Notes</div>
+        <div class="small-note">
+          This version reads from your local JSON files in the <code>database</code> folder.<br><br>
+          Proficiencies, skills, and features are merged from class and subclass into unified blocks.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

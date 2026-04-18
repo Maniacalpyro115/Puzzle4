@@ -1,0 +1,280 @@
+{
+  "id": "death",
+  "parentClassId": "cleric",
+  "name": "Death Domain",
+  "shortName": "Death",
+  "source": {
+    "name": "DND 5e Wikidot",
+    "url": "https://dnd5e.wikidot.com/cleric:death",
+    "license": "CC BY-SA 3.0",
+    "attribution_required": true,
+    "sourceBook": "Dungeon Master's Guide"
+  },
+  "version": "5e-2014",
+  "subclassType": "domain",
+  "subclassChoiceLevel": 1,
+  "grantedSpells": {
+    "alwaysPrepared": true,
+    "countsAsClassSpells": true,
+    "spellsByClassLevel": {
+      "1": [
+        "False Life",
+        "Ray of Sickness"
+      ],
+      "3": [
+        "Blindness/Deafness",
+        "Ray of Enfeeblement"
+      ],
+      "5": [
+        "Animate Dead",
+        "Vampiric Touch"
+      ],
+      "7": [
+        "Blight",
+        "Death Ward"
+      ],
+      "9": [
+        "Antilife Shell",
+        "Cloudkill"
+      ]
+    }
+  },
+  "features": [
+    {
+      "id": "death-domain-spells",
+      "name": "Death Domain Spells",
+      "level": 1,
+      "category": "subclass",
+      "summary": "You gain domain spells at cleric levels 1, 3, 5, 7, and 9. These spells are always prepared and count as cleric spells for you.",
+      "grantsSpellsFromTable": true
+    },
+    {
+      "id": "bonus-proficiency",
+      "name": "Bonus Proficiency",
+      "level": 1,
+      "category": "subclass",
+      "summary": "You gain proficiency with martial weapons.",
+      "grants": {
+        "weaponProficiencies": [
+          "martial"
+        ]
+      }
+    },
+    {
+      "id": "reaper",
+      "name": "Reaper",
+      "level": 1,
+      "category": "subclass",
+      "summary": "You learn one necromancy cantrip of your choice from any spell list. When you cast a necromancy cantrip that normally targets only one creature, it can instead target two creatures within range and within 5 feet of each other.",
+      "grants": {
+        "cantripChoices": [
+          {
+            "choose": 1,
+            "school": "necromancy",
+            "fromSpellList": "any",
+            "spellLevel": 0
+          }
+        ]
+      },
+      "modifiers": [
+        {
+          "appliesTo": "necromancy-cantrips",
+          "condition": "normally targets only one creature",
+          "effect": "can target two creatures within range and within 5 feet of each other"
+        }
+      ]
+    },
+    {
+      "id": "touch-of-death",
+      "name": "Channel Divinity: Touch of Death",
+      "level": 2,
+      "category": "subclass",
+      "summary": "When you hit a creature with a melee attack, you can use Channel Divinity to deal extra necrotic damage to the target equal to 5 + twice your cleric level.",
+      "activation": {
+        "type": "on-hit"
+      },
+      "resource": {
+        "type": "channel-divinity",
+        "amount": 1
+      },
+      "trigger": {
+        "event": "hit-with-melee-attack"
+      },
+      "damage": {
+        "type": "necrotic",
+        "formula": "5 + (2 * cleric_level)"
+      }
+    },
+    {
+      "id": "inescapable-destruction",
+      "name": "Inescapable Destruction",
+      "level": 6,
+      "category": "subclass",
+      "summary": "Necrotic damage dealt by your cleric spells and Channel Divinity options ignores resistance to necrotic damage.",
+      "modifiers": [
+        {
+          "appliesTo": "cleric-spells",
+          "damageType": "necrotic",
+          "effect": "ignores resistance"
+        },
+        {
+          "appliesTo": "channel-divinity-options",
+          "damageType": "necrotic",
+          "effect": "ignores resistance"
+        }
+      ]
+    },
+    {
+      "id": "divine-strike",
+      "name": "Divine Strike",
+      "level": 8,
+      "category": "subclass",
+      "summary": "Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal extra necrotic damage. The extra damage is 1d8, increasing to 2d8 at 14th level.",
+      "activation": {
+        "type": "on-hit"
+      },
+      "limit": {
+        "type": "once-per-turn"
+      },
+      "trigger": {
+        "event": "hit-with-weapon-attack"
+      },
+      "damage": {
+        "type": "necrotic",
+        "diceByClericLevel": {
+          "8": "1d8",
+          "14": "2d8"
+        }
+      }
+    },
+    {
+      "id": "improved-reaper",
+      "name": "Improved Reaper",
+      "level": 17,
+      "category": "subclass",
+      "summary": "When you cast a necromancy spell of 1st through 5th level that normally targets only one creature, it can instead target two creatures within range and within 5 feet of each other. If the spell consumes material components, you must provide them for each target.",
+      "modifiers": [
+        {
+          "appliesTo": "necromancy-spells",
+          "spellLevels": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "condition": "normally targets only one creature",
+          "effect": "can target two creatures within range and within 5 feet of each other"
+        },
+        {
+          "appliesTo": "necromancy-spells",
+          "spellLevels": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "condition": "spell consumes material components and targets two creatures via this feature",
+          "effect": "must provide consumed material components for each target"
+        }
+      ]
+    }
+  ],
+  "levelProgression": [
+    {
+      "level": 1,
+      "features": [
+        "death-domain-spells",
+        "bonus-proficiency",
+        "reaper"
+      ]
+    },
+    {
+      "level": 2,
+      "features": [
+        "touch-of-death"
+      ]
+    },
+    {
+      "level": 3,
+      "features": []
+    },
+    {
+      "level": 4,
+      "features": []
+    },
+    {
+      "level": 5,
+      "features": []
+    },
+    {
+      "level": 6,
+      "features": [
+        "inescapable-destruction"
+      ]
+    },
+    {
+      "level": 7,
+      "features": []
+    },
+    {
+      "level": 8,
+      "features": [
+        "divine-strike"
+      ]
+    },
+    {
+      "level": 9,
+      "features": []
+    },
+    {
+      "level": 10,
+      "features": []
+    },
+    {
+      "level": 11,
+      "features": []
+    },
+    {
+      "level": 12,
+      "features": []
+    },
+    {
+      "level": 13,
+      "features": []
+    },
+    {
+      "level": 14,
+      "features": [
+        "divine-strike"
+      ]
+    },
+    {
+      "level": 15,
+      "features": []
+    },
+    {
+      "level": 16,
+      "features": []
+    },
+    {
+      "level": 17,
+      "features": [
+        "improved-reaper"
+      ]
+    },
+    {
+      "level": 18,
+      "features": []
+    },
+    {
+      "level": 19,
+      "features": []
+    },
+    {
+      "level": 20,
+      "features": []
+    }
+  ]
+}

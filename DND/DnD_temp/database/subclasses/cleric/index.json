@@ -1,0 +1,10 @@
+[
+  {
+    "id": "arcana",
+    "path": "./database/subclasses/cleric/arcana.json"
+  },
+  {
+    "id": "death",
+    "path": "./database/subclasses/cleric/death.json"
+  }
+]

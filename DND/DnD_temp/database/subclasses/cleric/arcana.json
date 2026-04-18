@@ -1,0 +1,305 @@
+{
+  "id": "arcana",
+  "parentClassId": "cleric",
+  "name": "Arcana Domain",
+  "shortName": "Arcana",
+  "source": {
+    "name": "DND 5e Wikidot",
+    "url": "https://dnd5e.wikidot.com/cleric:arcana",
+    "license": "CC BY-SA 3.0",
+    "attribution_required": true,
+    "sourceBook": "Sword Coast Adventurer's Guide"
+  },
+  "version": "5e-2014",
+  "subclassType": "domain",
+  "subclassChoiceLevel": 1,
+  "grantedSpells": {
+    "alwaysPrepared": true,
+    "countsAsClassSpells": true,
+    "spellsByClassLevel": {
+      "1": [
+        "Detect Magic",
+        "Magic Missile"
+      ],
+      "3": [
+        "Magic Weapon",
+        "Nystul's Magic Aura"
+      ],
+      "5": [
+        "Dispel Magic",
+        "Magic Circle"
+      ],
+      "7": [
+        "Arcane Eye",
+        "Leomund's Secret Chest"
+      ],
+      "9": [
+        "Planar Binding",
+        "Teleportation Circle"
+      ]
+    }
+  },
+  "features": [
+    {
+      "id": "arcane-domain-spells",
+      "name": "Arcana Domain Spells",
+      "level": 1,
+      "category": "subclass",
+      "summary": "You gain domain spells at cleric levels 1, 3, 5, 7, and 9. These spells are always prepared and count as cleric spells for you.",
+      "grantsSpellsFromTable": true
+    },
+    {
+      "id": "arcane-initiate",
+      "name": "Arcane Initiate",
+      "level": 1,
+      "category": "subclass",
+      "summary": "Gain proficiency in Arcana. Gain two cantrips of your choice from the wizard spell list; they count as cleric cantrips for you.",
+      "grants": {
+        "skillProficiencies": [
+          "Arcana"
+        ],
+        "cantripChoices": [
+          {
+            "choose": 2,
+            "fromSpellList": "wizard",
+            "spellLevel": 0,
+            "countsAsClassCantrips": true,
+            "countsAsClassSpells": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "arcane-abjuration",
+      "name": "Channel Divinity: Arcane Abjuration",
+      "level": 2,
+      "category": "subclass",
+      "summary": "Use Channel Divinity to turn one celestial, elemental, fey, or fiend within 30 feet that can see or hear you. The target makes a Wisdom save or is turned for 1 minute or until it takes damage.",
+      "activation": {
+        "type": "action"
+      },
+      "resource": {
+        "type": "channel-divinity",
+        "amount": 1
+      },
+      "targeting": {
+        "creatureTypes": [
+          "celestial",
+          "elemental",
+          "fey",
+          "fiend"
+        ],
+        "rangeFeet": 30,
+        "targetCount": 1
+      },
+      "save": {
+        "ability": "wis"
+      },
+      "duration": {
+        "type": "timed",
+        "minutes": 1,
+        "endsOnDamage": true
+      },
+      "effects": [
+        {
+          "type": "turned"
+        }
+      ],
+      "upgrades": [
+        {
+          "level": 5,
+          "name": "Arcane Banishment",
+          "summary": "If the target fails its save, and it is not on its plane of origin, it is banished for 1 minute with no concentration required if its CR is at or below the threshold.",
+          "conditions": {
+            "notOnNativePlane": true
+          },
+          "banishment": {
+            "durationMinutes": 1,
+            "concentrationRequired": false
+          },
+          "crThresholdByClericLevel": {
+            "5": "1/2",
+            "8": "1",
+            "11": "2",
+            "14": "3",
+            "17": "4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "spell-breaker",
+      "name": "Spell Breaker",
+      "level": 6,
+      "category": "subclass",
+      "summary": "When you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell on that creature if the ended spell's level is equal to or lower than the slot used for the healing spell.",
+      "trigger": {
+        "event": "heal-with-spell",
+        "minimumSpellLevel": 1
+      },
+      "effect": {
+        "type": "end-spell-on-target",
+        "spellCount": 1,
+        "maxEndedSpellLevelFormula": "slot_level_used"
+      }
+    },
+    {
+      "id": "potent-spellcasting",
+      "name": "Potent Spellcasting",
+      "level": 8,
+      "category": "subclass",
+      "summary": "Add your Wisdom modifier to the damage you deal with any cleric cantrip.",
+      "grants": {
+        "damageBonus": [
+          {
+            "appliesTo": "cleric-cantrips",
+            "bonusFormula": "wis_mod"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arcane-mastery",
+      "name": "Arcane Mastery",
+      "level": 17,
+      "category": "subclass",
+      "summary": "Choose four spells from the wizard spell list: one each of 6th, 7th, 8th, and 9th level. They become domain spells, are always prepared, and count as cleric spells for you.",
+      "grants": {
+        "spellChoices": [
+          {
+            "choose": 1,
+            "fromSpellList": "wizard",
+            "spellLevel": 6,
+            "becomesAlwaysPrepared": true,
+            "countsAsClassSpells": true,
+            "countsAsDomainSpells": true
+          },
+          {
+            "choose": 1,
+            "fromSpellList": "wizard",
+            "spellLevel": 7,
+            "becomesAlwaysPrepared": true,
+            "countsAsClassSpells": true,
+            "countsAsDomainSpells": true
+          },
+          {
+            "choose": 1,
+            "fromSpellList": "wizard",
+            "spellLevel": 8,
+            "becomesAlwaysPrepared": true,
+            "countsAsClassSpells": true,
+            "countsAsDomainSpells": true
+          },
+          {
+            "choose": 1,
+            "fromSpellList": "wizard",
+            "spellLevel": 9,
+            "becomesAlwaysPrepared": true,
+            "countsAsClassSpells": true,
+            "countsAsDomainSpells": true
+          }
+        ]
+      }
+    }
+  ],
+  "levelProgression": [
+    {
+      "level": 1,
+      "features": [
+        "arcane-domain-spells",
+        "arcane-initiate"
+      ]
+    },
+    {
+      "level": 2,
+      "features": [
+        "arcane-abjuration"
+      ]
+    },
+    {
+      "level": 3,
+      "features": []
+    },
+    {
+      "level": 4,
+      "features": []
+    },
+    {
+      "level": 5,
+      "features": [
+        "arcane-abjuration"
+      ]
+    },
+    {
+      "level": 6,
+      "features": [
+        "spell-breaker"
+      ]
+    },
+    {
+      "level": 7,
+      "features": []
+    },
+    {
+      "level": 8,
+      "features": [
+        "potent-spellcasting"
+      ]
+    },
+    {
+      "level": 9,
+      "features": []
+    },
+    {
+      "level": 10,
+      "features": []
+    },
+    {
+      "level": 11,
+      "features": [
+        "arcane-abjuration"
+      ]
+    },
+    {
+      "level": 12,
+      "features": []
+    },
+    {
+      "level": 13,
+      "features": []
+    },
+    {
+      "level": 14,
+      "features": [
+        "arcane-abjuration"
+      ]
+    },
+    {
+      "level": 15,
+      "features": []
+    },
+    {
+      "level": 16,
+      "features": []
+    },
+    {
+      "level": 17,
+      "features": [
+        "arcane-abjuration",
+        "arcane-mastery"
+      ]
+    },
+    {
+      "level": 18,
+      "features": []
+    },
+    {
+      "level": 19,
+      "features": []
+    },
+    {
+      "level": 20,
+      "features": []
+    }
+  ]
+}

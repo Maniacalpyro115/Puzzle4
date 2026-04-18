@@ -1,0 +1,317 @@
+{
+  "id": "cleric",
+  "name": "Cleric",
+  "source": {
+    "name": "DND 5e Wikidot",
+    "url": "https://dnd5e.wikidot.com/cleric",
+    "license": "CC BY-SA 3.0",
+    "attribution_required": true
+  },
+  "version": "5e-2014",
+  "classGroup": "full-caster",
+  "multiclassPrerequisites": {
+    "wis": 13
+  },
+  "hitPoints": {
+    "hitDie": 8,
+    "level1": {
+      "base": 8,
+      "plusAbility": "con"
+    },
+    "perLevelAfter1": {
+      "roll": 8,
+      "average": 5,
+      "plusAbility": "con"
+    }
+  },
+  "proficiencies": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple"],
+    "tools": [],
+    "savingThrows": ["wis", "cha"],
+    "skills": {
+      "choose": 2,
+      "from": [
+        "History",
+        "Insight",
+        "Medicine",
+        "Persuasion",
+        "Religion"
+      ]
+    }
+  },
+  "startingEquipment": {
+    "choices": [
+      {
+        "choose": 1,
+        "from": [
+          { "id": "mace", "name": "Mace" },
+          { "id": "warhammer", "name": "Warhammer", "requiresProficiency": true }
+        ]
+      },
+      {
+        "choose": 1,
+        "from": [
+          { "id": "scale-mail", "name": "Scale Mail" },
+          { "id": "leather-armor", "name": "Leather Armor" },
+          { "id": "chain-mail", "name": "Chain Mail", "requiresProficiency": true }
+        ]
+      },
+      {
+        "choose": 1,
+        "from": [
+          { "id": "light-crossbow-20-bolts", "name": "Light Crossbow and 20 Bolts" },
+          { "id": "any-simple-weapon", "name": "Any Simple Weapon" }
+        ]
+      },
+      {
+        "choose": 1,
+        "from": [
+          { "id": "priests-pack", "name": "Priest's Pack" },
+          { "id": "explorers-pack", "name": "Explorer's Pack" }
+        ]
+      }
+    ],
+    "fixed": [
+      { "id": "shield", "name": "Shield" },
+      { "id": "holy-symbol", "name": "Holy Symbol" }
+    ]
+  },
+  "spellcasting": {
+    "ability": "wis",
+    "spellListRef": "cleric",
+    "preparation": {
+      "type": "prepared",
+      "preparedCountFormula": "wis_mod + cleric_level",
+      "minimumPrepared": 1
+    },
+    "focus": ["holy-symbol"],
+    "ritualCasting": true,
+    "saveDcFormula": "8 + proficiency_bonus + wis_mod",
+    "spellAttackFormula": "proficiency_bonus + wis_mod",
+    "cantripsKnownByLevel": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 5,
+      "11": 5,
+      "12": 5,
+      "13": 5,
+      "14": 5,
+      "15": 5,
+      "16": 5,
+      "17": 5,
+      "18": 5,
+      "19": 5,
+      "20": 5
+    },
+    "spellSlotsByLevel": {
+      "1":  { "1": 2 },
+      "2":  { "1": 3 },
+      "3":  { "1": 4, "2": 2 },
+      "4":  { "1": 4, "2": 3 },
+      "5":  { "1": 4, "2": 3, "3": 2 },
+      "6":  { "1": 4, "2": 3, "3": 3 },
+      "7":  { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "8":  { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "9":  { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "10": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "11": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "12": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "13": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "14": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "15": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "16": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "17": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "18": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "19": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 },
+      "20": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 }
+    }
+  },
+  "subclassChoice": {
+    "level": 1,
+    "label": "Divine Domain",
+    "subcategory": "domain"
+  },
+  "subclasses": [
+    { "id": "arcana", "name": "Arcana", "sourceBook": "Sword Coast Adventurer's Guide", "status": "official" },
+    { "id": "death", "name": "Death", "sourceBook": "Dungeon Master's Guide", "status": "official" },
+    { "id": "forge", "name": "Forge", "sourceBook": "Xanathar's Guide to Everything", "status": "official" },
+    { "id": "grave", "name": "Grave", "sourceBook": "Xanathar's Guide to Everything", "status": "official" },
+    { "id": "knowledge", "name": "Knowledge", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "life", "name": "Life", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "light", "name": "Light", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "nature", "name": "Nature", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "order", "name": "Order", "sourceBook": "Guildmaster's Guide to Ravnica", "status": "official" },
+    { "id": "peace", "name": "Peace", "sourceBook": "Tasha's Cauldron of Everything", "status": "official" },
+    { "id": "tempest", "name": "Tempest", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "trickery", "name": "Trickery", "sourceBook": "Player's Handbook", "status": "official" },
+    { "id": "twilight", "name": "Twilight", "sourceBook": "Tasha's Cauldron of Everything", "status": "official" },
+    { "id": "war", "name": "War", "sourceBook": "Player's Handbook", "status": "official" },
+
+    { "id": "solidarity", "name": "Solidarity", "sourceBook": "Amonkhet Planeshift", "status": "planeshift" },
+    { "id": "strength", "name": "Strength", "sourceBook": "Amonkhet Planeshift", "status": "planeshift" },
+    { "id": "ambition", "name": "Ambition", "sourceBook": "Amonkhet Planeshift", "status": "planeshift" },
+    { "id": "zeal", "name": "Zeal", "sourceBook": "Amonkhet Planeshift", "status": "planeshift" },
+
+    { "id": "fate", "name": "Fate", "sourceBook": "Unearthed Arcana 85 - Wonders of the Multiverse", "status": "ua" },
+    { "id": "city", "name": "City", "sourceBook": "Unearthed Arcana 7 - Modern Magic", "status": "archived-ua" },
+    { "id": "protection", "name": "Protection", "sourceBook": "Unearthed Arcana 22 - Cleric", "status": "archived-ua" },
+    { "id": "twilight-ua", "name": "Twilight", "sourceBook": "Unearthed Arcana 63 - Cleric, Druid, Wizard", "status": "archived-ua" },
+    { "id": "unity", "name": "Unity", "sourceBook": "Unearthed Arcana 68 - Subclasses, Part 2", "status": "archived-ua" }
+  ],
+  "features": [
+    {
+      "id": "spellcasting",
+      "name": "Spellcasting",
+      "level": 1,
+      "category": "core",
+      "summary": "Prepared Wisdom-based divine spellcasting with ritual casting and holy symbol focus."
+    },
+    {
+      "id": "divine-domain",
+      "name": "Divine Domain",
+      "level": 1,
+      "category": "subclass",
+      "summary": "Choose a domain; it grants domain spells and subclass features at later levels.",
+      "grantsSubclass": true
+    },
+    {
+      "id": "channel-divinity",
+      "name": "Channel Divinity",
+      "level": 2,
+      "category": "core",
+      "summary": "Use divine energy for Turn Undead and domain-specific effects.",
+      "usesByLevel": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2,
+        "7": 2,
+        "8": 2,
+        "9": 2,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 2,
+        "14": 2,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 3,
+        "19": 3,
+        "20": 3
+      },
+      "recharge": "short_or_long_rest"
+    },
+    {
+      "id": "turn-undead",
+      "name": "Turn Undead",
+      "level": 2,
+      "category": "channel-divinity",
+      "summary": "Present holy symbol to force nearby undead to make a Wisdom save or be turned."
+    },
+    {
+      "id": "harness-divine-power",
+      "name": "Harness Divine Power",
+      "level": 2,
+      "category": "optional",
+      "summary": "Spend Channel Divinity to recover a spell slot up to half proficiency bonus, rounded up.",
+      "usesByLevel": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2,
+        "7": 2,
+        "8": 2,
+        "9": 2,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 2,
+        "14": 2,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 3,
+        "19": 3,
+        "20": 3
+      },
+      "recharge": "long_rest"
+    },
+    {
+      "id": "ability-score-improvement",
+      "name": "Ability Score Improvement",
+      "levelGains": [4, 8, 12, 16, 19],
+      "category": "core",
+      "summary": "Increase ability scores or take equivalent character advancement where allowed."
+    },
+    {
+      "id": "cantrip-versatility",
+      "name": "Cantrip Versatility",
+      "levelGains": [4, 8, 12, 16, 19],
+      "category": "optional",
+      "summary": "At ASI levels, replace one cleric cantrip with another from the cleric list."
+    },
+    {
+      "id": "destroy-undead",
+      "name": "Destroy Undead",
+      "level": 5,
+      "category": "core",
+      "summary": "Turned undead below a CR threshold are destroyed instead.",
+      "thresholdByLevel": {
+        "5": "1/2",
+        "8": "1",
+        "11": "2",
+        "14": "3",
+        "17": "4"
+      }
+    },
+    {
+      "id": "blessed-strikes",
+      "name": "Blessed Strikes",
+      "level": 8,
+      "category": "optional",
+      "summary": "Once per turn, a cantrip or weapon attack can deal extra radiant damage.",
+      "replacesOneOf": ["divine-strike", "potent-spellcasting"]
+    },
+    {
+      "id": "divine-intervention",
+      "name": "Divine Intervention",
+      "level": 10,
+      "category": "core",
+      "summary": "Ask deity for aid; success chance is based on cleric level.",
+      "automaticSuccessLevel": 20
+    }
+  ],
+  "levelProgression": [
+    { "level": 1, "proficiencyBonus": 2, "features": ["spellcasting", "divine-domain"] },
+    { "level": 2, "proficiencyBonus": 2, "features": ["channel-divinity", "turn-undead", "harness-divine-power"] },
+    { "level": 3, "proficiencyBonus": 2, "features": [] },
+    { "level": 4, "proficiencyBonus": 2, "features": ["ability-score-improvement", "cantrip-versatility"] },
+    { "level": 5, "proficiencyBonus": 3, "features": ["destroy-undead"] },
+    { "level": 6, "proficiencyBonus": 3, "features": [] },
+    { "level": 7, "proficiencyBonus": 3, "features": [] },
+    { "level": 8, "proficiencyBonus": 3, "features": ["ability-score-improvement", "cantrip-versatility", "blessed-strikes"] },
+    { "level": 9, "proficiencyBonus": 4, "features": [] },
+    { "level": 10, "proficiencyBonus": 4, "features": ["divine-intervention"] },
+    { "level": 11, "proficiencyBonus": 4, "features": [] },
+    { "level": 12, "proficiencyBonus": 4, "features": ["ability-score-improvement", "cantrip-versatility"] },
+    { "level": 13, "proficiencyBonus": 5, "features": [] },
+    { "level": 14, "proficiencyBonus": 5, "features": [] },
+    { "level": 15, "proficiencyBonus": 5, "features": [] },
+    { "level": 16, "proficiencyBonus": 5, "features": ["ability-score-improvement", "cantrip-versatility"] },
+    { "level": 17, "proficiencyBonus": 6, "features": [] },
+    { "level": 18, "proficiencyBonus": 6, "features": [] },
+    { "level": 19, "proficiencyBonus": 6, "features": ["ability-score-improvement", "cantrip-versatility"] },
+    { "level": 20, "proficiencyBonus": 6, "features": ["divine-intervention"] }
+  ]
+}
