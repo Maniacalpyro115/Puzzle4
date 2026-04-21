@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&D Mini Selector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">STL Library</p>
+        <h1>D&D Mini Picker</h1>
+        <p class="hero-subtitle">
+          Browse miniatures by Class and Race, make a selection, and send
+          off for printing.
+        </p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="top-panels">
+        <section class="controls-card">
+          <div class="controls-top">
+            <div>
+              <h2>Browse Minis</h2>
+            </div>
+            <div id="status" class="status-pill">Waiting to load minis...</div>
+          </div>
+
+          <div class="filters filters-two">
+            <div class="field">
+              <label for="class-filter">Class</label>
+              <select id="class-filter">
+                <option value="">All Classes</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="race-filter">Race</label>
+              <select id="race-filter">
+                <option value="">All Races</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="selection-card">
+          <div class="selection-top">
+            <div>
+              <h2>Selected Mini</h2>
+              <p id="selected-mini-text" class="selected-mini-text">No mini selected yet.</p>
+            </div>
+            <p id="submit-message" class="submit-message"></p>
+          </div>
+
+          <div class="selection-actions">
+            <div class="field submit-field inline-field">
+              <label for="submitter-name">Your Name</label>
+              <input
+                id="submitter-name"
+                type="text"
+                placeholder="Enter your name"
+                maxlength="100"
+                autocomplete="name"
+              />
+            </div>
+
+            <button id="submit-selection" class="submit-btn" disabled>Send Selection</button>
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <div id="mini-grid" class="mini-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="preview-modal" class="modal hidden" aria-hidden="true">
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+
+    <div class="modal-panel">
+      <button id="close-modal" class="close-modal" aria-label="Close preview">&times;</button>
+
+      <div class="modal-content">
+        <div class="viewer-panel">
+          <div id="viewer-container" class="viewer-container"></div>
+          <div class="viewer-help">
+            Drag to rotate • Scroll to zoom • Right-drag to pan
+          </div>
+        </div>
+
+        <div class="modal-info">
+          <p id="modal-tag" class="mini-tag">Mini Preview</p>
+          <h2 id="modal-name">Mini Name</h2>
+          <p id="modal-meta" class="modal-meta">Class • Race</p>
+          <button id="choose-mini-btn" class="choose-btn">Choose This Mini</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script async src="https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
