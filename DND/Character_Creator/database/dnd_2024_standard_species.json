@@ -1,0 +1,627 @@
+[
+  {
+    "name": "Aasimar",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium",
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Celestial Resistance: resistance to Necrotic and Radiant damage.",
+      "Healing Hands: as a Magic action, touch a creature and heal d4s equal to your proficiency bonus; once per Long Rest.",
+      "Light Bearer: know the Light cantrip (Charisma is the spellcasting ability for it).",
+      "Celestial Revelation: at level 3, as a Bonus Action, transform for 1 minute once per Long Rest; choose the option each time you activate it."
+    ],
+    "followup_choices": [
+      {
+        "id": "size_choice",
+        "type": "size_choice",
+        "count": 1,
+        "options": [
+          "Medium",
+          "Small"
+        ],
+        "rules": {}
+      }
+    ],
+    "activated_choices": [
+      {
+        "id": "celestial_revelation_mode",
+        "type": "ability_mode_choice",
+        "available_at_level": 3,
+        "count": 1,
+        "when": "each time Celestial Revelation is activated",
+        "options": [
+          {
+            "name": "Heavenly Wings",
+            "description": "Gain a Fly Speed equal to your Speed for the duration."
+          },
+          {
+            "name": "Inner Radiance",
+            "description": "Shed bright and dim light; at the end of each of your turns, each creature within 10 feet takes Radiant damage equal to your proficiency bonus."
+          },
+          {
+            "name": "Necrotic Shroud",
+            "description": "Once on each of your turns, one target you damage with an attack or spell takes extra Necrotic damage equal to your proficiency bonus, and nearby creatures may be frightened when you transform."
+          }
+        ],
+        "rules": {
+          "choice_is_not_permanent": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "Dragonborn",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Breath Weapon: when you take the Attack action, replace one attack with a 15-foot cone or 30-foot line (5 feet wide); Dex save; damage scales by level; uses equal to proficiency bonus per Long Rest.",
+      "Damage Resistance: gain resistance based on your draconic ancestry.",
+      "Draconic Flight: at level 5, as a Bonus Action, gain spectral wings and fly for 10 minutes once per Long Rest."
+    ],
+    "followup_choices": [
+      {
+        "id": "draconic_ancestry",
+        "type": "lineage_choice",
+        "count": 1,
+        "options": [
+          {
+            "name": "Black",
+            "damage_type": "Acid"
+          },
+          {
+            "name": "Blue",
+            "damage_type": "Lightning"
+          },
+          {
+            "name": "Brass",
+            "damage_type": "Fire"
+          },
+          {
+            "name": "Bronze",
+            "damage_type": "Lightning"
+          },
+          {
+            "name": "Copper",
+            "damage_type": "Acid"
+          },
+          {
+            "name": "Gold",
+            "damage_type": "Fire"
+          },
+          {
+            "name": "Green",
+            "damage_type": "Poison"
+          },
+          {
+            "name": "Red",
+            "damage_type": "Fire"
+          },
+          {
+            "name": "Silver",
+            "damage_type": "Cold"
+          },
+          {
+            "name": "White",
+            "damage_type": "Cold"
+          }
+        ],
+        "rules": {
+          "affects": [
+            "Breath Weapon",
+            "Damage Resistance",
+            "appearance"
+          ]
+        }
+      }
+    ],
+    "activated_choices": []
+  },
+  {
+    "name": "Dwarf",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium"
+    ],
+    "speed": 30,
+    "darkvision": 120,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Dwarven Resilience: resistance to Poison damage and advantage on saving throws to avoid or end the Poisoned condition.",
+      "Dwarven Toughness: hit point maximum increases by 1, and increases by 1 again whenever you gain a level.",
+      "Stonecunning: as a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on or touching stone; uses equal to proficiency bonus per Long Rest."
+    ],
+    "followup_choices": [],
+    "activated_choices": []
+  },
+  {
+    "name": "Elf",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Fey Ancestry: advantage on saving throws to avoid or end the Charmed condition.",
+      "Keen Senses: gain proficiency in one of Insight, Perception, or Survival.",
+      "Trance: you do not need to sleep, magic cannot put you to sleep, and you can finish a Long Rest in 4 hours of trancelike meditation."
+    ],
+    "followup_choices": [
+      {
+        "id": "keen_senses_skill",
+        "type": "skill_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Insight",
+          "Perception",
+          "Survival"
+        ],
+        "rules": {
+          "grant_type": "proficiency"
+        }
+      },
+      {
+        "id": "elven_lineage",
+        "type": "lineage_choice",
+        "count": 1,
+        "options": [
+          {
+            "name": "Drow",
+            "level_1": [
+              "Darkvision increases to 120 feet",
+              "Dancing Lights cantrip"
+            ],
+            "level_3": [
+              "Faerie Fire"
+            ],
+            "level_5": [
+              "Darkness"
+            ]
+          },
+          {
+            "name": "High Elf",
+            "level_1": [
+              "Prestidigitation cantrip",
+              "After each Long Rest, may replace it with another Wizard cantrip"
+            ],
+            "level_3": [
+              "Detect Magic"
+            ],
+            "level_5": [
+              "Misty Step"
+            ]
+          },
+          {
+            "name": "Wood Elf",
+            "level_1": [
+              "Speed becomes 35 feet",
+              "Druidcraft cantrip"
+            ],
+            "level_3": [
+              "Longstrider"
+            ],
+            "level_5": [
+              "Pass without Trace"
+            ]
+          }
+        ],
+        "rules": {
+          "choose_spellcasting_ability": true
+        }
+      },
+      {
+        "id": "elven_lineage_spellcasting_ability",
+        "type": "spellcasting_ability_choice",
+        "count": 1,
+        "options": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "applies_to": "Elven Lineage spells"
+        }
+      }
+    ],
+    "activated_choices": []
+  },
+  {
+    "name": "Gnome",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Gnomish Cunning: advantage on Intelligence, Wisdom, and Charisma saving throws."
+    ],
+    "followup_choices": [
+      {
+        "id": "gnomish_lineage",
+        "type": "lineage_choice",
+        "count": 1,
+        "options": [
+          {
+            "name": "Forest Gnome",
+            "level_1": [
+              "Minor Illusion cantrip",
+              "Speak with Animals always prepared",
+              "Cast Speak with Animals without a slot proficiency-bonus times per Long Rest"
+            ]
+          },
+          {
+            "name": "Rock Gnome",
+            "level_1": [
+              "Mending cantrip",
+              "Prestidigitation cantrip",
+              "Can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device with one Prestidigitation effect"
+            ]
+          }
+        ],
+        "rules": {
+          "choose_spellcasting_ability": true
+        }
+      },
+      {
+        "id": "gnomish_lineage_spellcasting_ability",
+        "type": "spellcasting_ability_choice",
+        "count": 1,
+        "options": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "applies_to": "Gnomish Lineage spells"
+        }
+      }
+    ],
+    "activated_choices": []
+  },
+  {
+    "name": "Goliath",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium"
+    ],
+    "speed": 35,
+    "darkvision": null,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Powerful Build: advantage on any save you make to end the Grappled condition, and you count as one size larger when determining carrying capacity.",
+      "Large Form: at level 5, as a Bonus Action, become Large for 10 minutes if you have room; gain advantage on Strength checks and +10 Speed; once per Long Rest."
+    ],
+    "followup_choices": [
+      {
+        "id": "giant_ancestry",
+        "type": "lineage_choice",
+        "count": 1,
+        "options": [
+          {
+            "name": "Cloud Giant",
+            "benefit": "Cloud's Jaunt: as a Bonus Action, teleport up to 30 feet to an unoccupied space you can see."
+          },
+          {
+            "name": "Fire Giant",
+            "benefit": "Fire's Burn: when you hit a target with an attack roll and deal damage, deal an extra 1d10 Fire damage."
+          },
+          {
+            "name": "Frost Giant",
+            "benefit": "Frost's Chill: when you hit a target with an attack roll and deal damage, deal an extra 1d6 Cold damage and reduce its Speed by 10 feet until the start of your next turn."
+          },
+          {
+            "name": "Hill Giant",
+            "benefit": "Hill's Tumble: when you hit a Large or smaller creature with an attack roll and deal damage, give it the Prone condition."
+          },
+          {
+            "name": "Stone Giant",
+            "benefit": "Stone's Endurance: when you take damage, use your Reaction to roll 1d12 + CON modifier and reduce the damage by that total."
+          },
+          {
+            "name": "Storm Giant",
+            "benefit": "Storm's Thunder: when you take damage from a creature within 60 feet, use your Reaction to deal 1d8 Thunder damage to that creature."
+          }
+        ],
+        "rules": {
+          "uses": "proficiency bonus per Long Rest"
+        }
+      }
+    ],
+    "activated_choices": []
+  },
+  {
+    "name": "Halfling",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": null,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Brave: advantage on saving throws to avoid or end the Frightened condition.",
+      "Halfling Nimbleness: move through the space of any creature that is a size larger than you, but you cannot stop there.",
+      "Lucky: when you roll a 1 on a d20 Test, reroll the die.",
+      "Naturally Stealthy: you can take the Hide action even when obscured only by a creature at least one size larger than you."
+    ],
+    "followup_choices": [],
+    "activated_choices": []
+  },
+  {
+    "name": "Human",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium",
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": null,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Resourceful: gain Heroic Inspiration whenever you finish a Long Rest.",
+      "Skillful: gain proficiency in one skill of your choice.",
+      "Versatile: gain one Origin feat of your choice."
+    ],
+    "followup_choices": [
+      {
+        "id": "size_choice",
+        "type": "size_choice",
+        "count": 1,
+        "options": [
+          "Medium",
+          "Small"
+        ],
+        "rules": {}
+      },
+      {
+        "id": "human_skill_choice",
+        "type": "skill_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Acrobatics",
+          "Animal Handling",
+          "Arcana",
+          "Athletics",
+          "Deception",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Investigation",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Performance",
+          "Persuasion",
+          "Religion",
+          "Sleight of Hand",
+          "Stealth",
+          "Survival"
+        ],
+        "rules": {
+          "grant_type": "proficiency"
+        }
+      },
+      {
+        "id": "origin_feat_choice",
+        "type": "feat_choice",
+        "count": 1,
+        "options": [
+          "Alert",
+          "Crafter",
+          "Healer",
+          "Lucky",
+          "Magic Initiate (Cleric)",
+          "Magic Initiate (Druid)",
+          "Magic Initiate (Wizard)",
+          "Musician",
+          "Savage Attacker",
+          "Skilled",
+          "Tavern Brawler",
+          "Tough"
+        ],
+        "rules": {
+          "category": "Origin Feat"
+        }
+      }
+    ],
+    "activated_choices": []
+  },
+  {
+    "name": "Orc",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium"
+    ],
+    "speed": 30,
+    "darkvision": 120,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Adrenaline Rush: take the Dash action as a Bonus Action and gain temporary hit points equal to your proficiency bonus; uses equal to proficiency bonus per Short or Long Rest.",
+      "Relentless Endurance: when reduced to 0 Hit Points but not killed outright, drop to 1 Hit Point instead; once per Long Rest."
+    ],
+    "followup_choices": [],
+    "activated_choices": []
+  },
+  {
+    "name": "Tiefling",
+    "category": "Standard Species",
+    "source": "2024 Player's Handbook / Basic Rules",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium",
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [],
+      "other": []
+    },
+    "abilities": [
+      "Otherworldly Presence: know the Thaumaturgy cantrip; it uses the same spellcasting ability as your Fiendish Legacy spells."
+    ],
+    "followup_choices": [
+      {
+        "id": "size_choice",
+        "type": "size_choice",
+        "count": 1,
+        "options": [
+          "Medium",
+          "Small"
+        ],
+        "rules": {}
+      },
+      {
+        "id": "fiendish_legacy",
+        "type": "lineage_choice",
+        "count": 1,
+        "options": [
+          {
+            "name": "Abyssal",
+            "level_1": [
+              "Resistance to Poison damage",
+              "Poison Spray cantrip"
+            ],
+            "level_3": [
+              "Ray of Sickness"
+            ],
+            "level_5": [
+              "Hold Person"
+            ]
+          },
+          {
+            "name": "Chthonic",
+            "level_1": [
+              "Resistance to Necrotic damage",
+              "Chill Touch cantrip"
+            ],
+            "level_3": [
+              "False Life"
+            ],
+            "level_5": [
+              "Ray of Enfeeblement"
+            ]
+          },
+          {
+            "name": "Infernal",
+            "level_1": [
+              "Resistance to Fire damage",
+              "Fire Bolt cantrip"
+            ],
+            "level_3": [
+              "Hellish Rebuke"
+            ],
+            "level_5": [
+              "Darkness"
+            ]
+          }
+        ],
+        "rules": {
+          "choose_spellcasting_ability": true
+        }
+      },
+      {
+        "id": "fiendish_legacy_spellcasting_ability",
+        "type": "spellcasting_ability_choice",
+        "count": 1,
+        "options": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "applies_to": "Fiendish Legacy spells and Otherworldly Presence"
+        }
+      }
+    ],
+    "activated_choices": []
+  }
+]

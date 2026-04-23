@@ -1,0 +1,3453 @@
+{
+  "schema_version": "2024-04-feats-v2",
+  "notes": {
+    "purpose": "Structured 2024 feat data for a character builder, including follow-up selections needed after a feat is chosen.",
+    "proficiency_groups": [
+      "weapons",
+      "armor",
+      "saving_throws",
+      "skills",
+      "other"
+    ],
+    "followup_choice_types": [
+      "ability_score_increase",
+      "proficiency_or_expertise",
+      "skill_proficiency",
+      "skill_expertise",
+      "saving_throw_proficiency",
+      "mixed_proficiency"
+    ]
+  },
+  "feats": [
+    {
+      "name": "Ability Score Improvement",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Increase one ability score by 2, or increase two ability scores by 1 each. This feat can't raise a score above 20.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 2,
+        "distribution": "one score +2 or two scores +1 each",
+        "choices": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 2,
+          "options": [
+            "STR",
+            "DEX",
+            "CON",
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +2 or two scores +1 each",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Actor",
+      "category": "General",
+      "prerequisite": "Level 4+, Charisma 13+",
+      "description": "Gain advantage on Deception and Performance checks while disguised. You can mimic sounds and voices, though listeners can detect the imitation with a successful Insight check.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Alert",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Can't be surprised while conscious. +5 to Initiative. Other creatures don't have advantage from being unseen.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Athlete",
+      "category": "General",
+      "prerequisite": "Level 4+, Strength or Dexterity 13+",
+      "description": "While prone, standing takes 5ft. Climbing doesn't cost extra movement. Can make running jump after only moving 5ft.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Charger",
+      "category": "General",
+      "prerequisite": "Level 4+, Strength or Dexterity 13+",
+      "description": "When you Dash, your speed increases by 10 feet for that action. If you move at least 10 feet in a straight line before hitting with a melee attack, you can deal extra damage or push the target 10 feet once per turn.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Chef",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Gain proficiency with cook's tools. During short rest, cook for 4 + [prof] creatures. They gain additional 1d8 hp after rest. Can create [prof] treats during long rest - bonus action to consume, creature gains [prof] temp hp.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "CON",
+          "WIS"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [
+            "Cook's Utensils"
+          ],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "CON",
+            "WIS"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Crossbow Expert",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Ignore the Loading property of crossbows, don't have disadvantage on ranged attacks in melee, and may make bonus action hand crossbow attack after using Attack action.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Crusher",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Once per turn when you deal bludgeoning damage, you can move the target 5 feet to an unoccupied space. On a critical hit dealing bludgeoning damage, attack rolls against that target have advantage the start of next turn.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "CON"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "CON"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Defensive Duelist",
+      "category": "General",
+      "prerequisite": "Dexterity 13+",
+      "description": "While wielding a Finesse weapon, you can use your Reaction when hit by a melee attack to add your proficiency bonus to your AC, possibly causing the attack to miss.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Dual Wielder",
+      "category": "General",
+      "prerequisite": null,
+      "description": "+1 AC wielding separate melee weapons. Can use two-weapon fighting with non-light weapons.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Durable",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Gain advantage on Death Saving Throws. As a Bonus Action, you can spend one Hit Die and regain hit points equal to the roll.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "CON"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "CON"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Elemental Adept",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Choose one damage type from Acid, Cold, Fire, Lightning, or Thunder. Your spells ignore Resistance to that type, and 1s on damage dice of that type count as 2s.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Fey-Touched",
+      "category": "General",
+      "prerequisite": null,
+      "description": "You always have Misty Step and one chosen 1st-level Divination or Enchantment spell prepared. You can cast each once for free per Long Rest and can also cast them with spell slots.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Grappler",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Advantage of creatures you're grappling. Can use Action to pin grappled creature - make another grapple check, both you and them restrained on success.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Great Weapon Master",
+      "category": "General",
+      "prerequisite": null,
+      "description": "On a critical hit or when you reduce a creature to 0 hit points with melee weapon, can make a Bonus Action attack. Opt for -5 to attack roll for +10 to damage",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Healer",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "When stabilizing a dying creature, they regain 1hp. As an action, use Healer's kit to restore (1d6 + 4 + their level) hp. Once per creature per rest.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Heavily Armored",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Gain proficiency with Heavy armor.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [
+            "Heavy Armor"
+          ],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "CON"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Heavy Armor Master",
+      "category": "General",
+      "prerequisite": null,
+      "description": "While wearing Heavy armor, reduce bludgeoning, piercing, and slashing damage you take by your proficiency bonus.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "CON"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "CON"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Inspiring Leader",
+      "category": "General",
+      "prerequisite": null,
+      "description": "After a Short or Long Rest, give temporary hit points to up to six allies, each equal to your level plus your Charisma modifier.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Keen Mind",
+      "category": "General",
+      "prerequisite": null,
+      "description": "Always know which way is North, hours before next sunrise / sunset, and can recall anything seen or heard in past month.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": "Choose one listed skill. Gain proficiency, or expertise if already proficient."
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        },
+        {
+          "id": "keen_mind_skill",
+          "type": "proficiency_or_expertise",
+          "count": 1,
+          "options": [
+            "Arcana",
+            "History",
+            "Investigation",
+            "Nature",
+            "Religion"
+          ],
+          "rules": "If already proficient in the chosen skill, grant expertise instead of proficiency."
+        }
+      ]
+    },
+    {
+      "name": "Lightly Armored",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Gain proficiency with Light armor and Shields.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [
+            "Light Armor",
+            "Shield"
+          ],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Lucky",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Gain 3 Luck Points you can spend to reroll a d20 or force attacker to reroll. Regain at Long Rest",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Mage Slayer",
+      "category": "General",
+      "prerequisite": null,
+      "description": "When you damage a creature concentrating on a spell, it has disadvantage on its next Concentration save before the end of your next turn. Once per Long Rest, you can turn a failed Intelligence, Wisdom, or Charisma save into a success.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Magic Initiate",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Choose Cleric, Druid, or Wizard. Learn two cantrips and one 1st-level spell from that list; you can cast the 1st-level spell once for free per Long Rest and also with spell slots. Repeatable with a different list each time.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Martial Weapon Training",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Gain proficiency with Martial weapons.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [
+            "Martial Weapons"
+          ],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Medium Armor Master",
+      "category": "General",
+      "prerequisite": "Level 4+, Medium Armor Training",
+      "description": "While wearing Medium armor, you can add up to +3 from Dexterity to your AC instead of +2, as long as your Dexterity score is 16 or higher.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Moderately Armored",
+      "category": "General",
+      "prerequisite": "Level 4+, Light Armor Training",
+      "description": "Gain proficiency with Medium armor.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Mounted Combatant",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "You have advantage on attacks against unmounted creatures smaller than your mount, and when your mount makes a Dexterity save for half damage, it takes only half damage on a failure and no damage on a success.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX",
+          "WIS"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX",
+            "WIS"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Musician",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Gain proficiency with three Musical Instruments. At the end of a Short or Long Rest, you can grant Heroic Inspiration to allies, up to a number equal to your proficiency bonus.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 3,
+          "choices": [
+            "Bagpipes",
+            "Drum",
+            "Dulcimer",
+            "Flute",
+            "Lute",
+            "Lyre",
+            "Horn",
+            "Pan Flute",
+            "Shawm",
+            "Viol"
+          ],
+          "notes": "Choose three Musical Instrument proficiencies."
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Observant",
+      "category": "General",
+      "prerequisite": "Level 4+, Intelligence or Wisdom 13+",
+      "description": "Gain +5 to Investigation and Perception. Can read lips when you know the spoken language.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 1,
+          "choices": [
+            "Insight",
+            "Investigation",
+            "Perception"
+          ],
+          "expertise_choice_count": 1,
+          "expertise_choices": [
+            "Insight",
+            "Investigation",
+            "Perception"
+          ],
+          "notes": "Choose one listed skill. Gain proficiency, or expertise if already proficient."
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        },
+        {
+          "id": "observant_skill",
+          "type": "proficiency_or_expertise",
+          "count": 1,
+          "options": [
+            "Insight",
+            "Investigation",
+            "Perception"
+          ],
+          "rules": "If already proficient in the chosen skill, grant expertise instead of proficiency."
+        }
+      ]
+    },
+    {
+      "name": "Piercer",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Once per turn when you deal piercing damage, you can reroll one damage die. On a critical hit dealing piercing damage, you roll one additional damage die.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Poisoner",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Your poison damage ignores Resistance. During a Short or Long Rest, you can create doses of poison that deal 2d8 poison damage on a hit or when delivered by ammunition.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX",
+          "INT"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX",
+            "INT"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Polearm Master",
+      "category": "General",
+      "prerequisite": "Level 4+, Strength or Dexterity 13+",
+      "description": "When taking the Attack action with a glaive, halberd, quarterstaff, or spear, may make bonus Action attack for 1d4 + modifier. Creatures provoke Opportunity Attacks when entering reach.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Resilient",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Gain proficiency in a chosen Saving Throw.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20,
+        "notes": "Chosen score must be one for which the character lacks save proficiency."
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 1,
+          "choices": [
+            "STR",
+            "DEX",
+            "CON",
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "notes": "Choose an ability score for which you currently lack saving throw proficiency; gain that saving throw proficiency."
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX",
+            "CON",
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": "Chosen score must be one for which the character lacks save proficiency."
+        },
+        {
+          "id": "resilient_save",
+          "type": "saving_throw_proficiency",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX",
+            "CON",
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "rules": "Chosen ability must not already be a saving throw proficiency."
+        }
+      ]
+    },
+    {
+      "name": "Ritual Caster",
+      "category": "General",
+      "prerequisite": "Level 4+, Intelligence, Wisdom, or Charisma 13+",
+      "description": "Choose a number of level 1 Ritual spells equal to your proficiency bonus from Cleric, Druid, or Wizard. You can cast one of those prepared Rituals without the extra 10 minutes once per Long Rest.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Savage Attacker",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Once per turn when you hit with a weapon, roll the weapon's damage dice twice and use either roll.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Sentinel",
+      "category": "General",
+      "prerequisite": "Level 4+, Strength or Dexterity 13+",
+      "description": "You can make Opportunity Attacks against creatures that Disengage, and when a creature within 5 feet of you attacks an ally, you can make an Opportunity Attack against it. Your Opportunity Attacks reduce target's speed to 0 for rest of turn.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Shadow-Touched",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "You always have Invisibility and one chosen 1st-level Illusion or Necromancy spell prepared. You can cast each once for free per Long Rest and also with spell slots.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Sharpshooter",
+      "category": "General",
+      "prerequisite": "Level 4+, Dexterity 13+",
+      "description": "Your ranged attacks ignore 1/2 and 3/4 cover, and don't have disadvantage at long range. Opt for -5 to attack roll for +10 to damage",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Shield Master",
+      "category": "General",
+      "prerequisite": "Level 4+, Shield Training",
+      "description": "Once per turn when you hit with a melee attack while wielding a shield, you can shove the target 5 feet or knock it prone. On a successful Dexterity save that would deal half damage, you can use your Reaction to take no damage instead.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Skill Expert",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Gain proficiency in one skill of your choice and expertise in one skill in which you already have proficiency.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 1,
+          "choices": [
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+          ],
+          "expertise_choice_count": 1,
+          "expertise_choices": [
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+          ],
+          "notes": "Gain one skill proficiency of your choice and expertise in one skill you are proficient in. These may be different skills; if the chosen proficiency makes you proficient, your expertise choice could be that same skill if your builder allows ordering after the proficiency gain."
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX",
+            "CON",
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        },
+        {
+          "id": "skill_expert_proficiency",
+          "type": "skill_proficiency",
+          "count": 1,
+          "options": [
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+          ],
+          "rules": "Choose one skill to gain proficiency in."
+        },
+        {
+          "id": "skill_expert_expertise",
+          "type": "skill_expertise",
+          "count": 1,
+          "options": [
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+          ],
+          "rules": "Choose one skill you are proficient in to gain expertise in."
+        }
+      ]
+    },
+    {
+      "name": "Skilled",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Gain proficiency in any combination of three skills or tools of your choice.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 3,
+          "choices": [
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+          ],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": "Choose any combination of three skill or tool proficiencies."
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 3,
+          "choices": [
+            "Any Tool Proficiency"
+          ],
+          "notes": "This feat allows any mix of tools and skills totaling three proficiencies."
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "skilled_choices",
+          "type": "mixed_proficiency",
+          "count": 3,
+          "groups": [
+            "skills",
+            "tools"
+          ],
+          "options": {
+            "skills": [
+              "Acrobatics",
+              "Animal Handling",
+              "Arcana",
+              "Athletics",
+              "Deception",
+              "History",
+              "Insight",
+              "Intimidation",
+              "Investigation",
+              "Medicine",
+              "Nature",
+              "Perception",
+              "Performance",
+              "Persuasion",
+              "Religion",
+              "Sleight of Hand",
+              "Stealth",
+              "Survival"
+            ],
+            "tools": [
+              "Any Tool Proficiency"
+            ]
+          },
+          "rules": "Choose any combination of three skills and/or tool proficiencies."
+        }
+      ]
+    },
+    {
+      "name": "Skulker",
+      "category": "General",
+      "prerequisite": "Level 4+, Dexterity 13+",
+      "description": "Gain Blindsight 10 feet, have advantage on Stealth checks made during combat, and missing with an attack while Hidden doesn't reveal your location.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Slasher",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Once per turn when you deal slashing damage, reduce the target's speed by 10 feet. On a critical hit dealing slashing damage, the target has disadvantage on its next attack roll before the start of your next turn.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Speedy",
+      "category": "General",
+      "prerequisite": "Level 4+, Dexterity or Constitution 13+",
+      "description": "Your speed increases by 10 feet, your Dash ignores Difficult Terrain, and Opportunity Attacks against you have disadvantage.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "DEX",
+          "CON"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "DEX",
+            "CON"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Spell Sniper",
+      "category": "General",
+      "prerequisite": "Level 4+, Spellcasting or Pact Magic Feature",
+      "description": "Attack roll spells have double range and ignore 1/2 and 3/4 cover. Learn an attack roll cantrip",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Tavern Brawler",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Proficient with improvised weapons. Unarmed strikes use 1d4 for damage. When hitting creature with either, may use bonus action to attempt grapple.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [
+            "Improvised Weapons"
+          ],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "Telekinetic",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Learn Mage Hand, which is invisible and has 30 extra feet of range for you. As a Bonus Action, you can force a creature to make a Strength save or be moved 5 feet.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Telepathic",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "You can speak telepathically to creatures within 60 feet. You always have Detect Thoughts prepared, can cast it once for free per Long Rest, and can also cast it with spell slots.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Tough",
+      "category": "Origin",
+      "prerequisite": null,
+      "description": "Your hit point maximum increases by twice your current level when you take this feat, and it increases by 2 again whenever you gain a level.",
+      "stat_increase": {
+        "type": "none",
+        "points": 0,
+        "distribution": null,
+        "choices": [],
+        "max_score": null
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": []
+    },
+    {
+      "name": "War Caster",
+      "category": "General",
+      "prerequisite": "Level 4+, Spellcasting or Pact Magic Feature",
+      "description": "Gain advantage on Concentration saves, can perform Somatic components even with hands full, and can cast a single-target spell as an Opportunity Attack.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "INT",
+            "WIS",
+            "CHA"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    },
+    {
+      "name": "Weapon Master",
+      "category": "General",
+      "prerequisite": "Level 4+",
+      "description": "Choose one Simple or Martial weapon with which you have proficiency; you can use that weapon's Mastery property. You can change the chosen weapon after a Long Rest.",
+      "stat_increase": {
+        "type": "choice",
+        "points": 1,
+        "distribution": "one score +1",
+        "choices": [
+          "STR",
+          "DEX"
+        ],
+        "max_score": 20
+      },
+      "proficiencies": {
+        "weapons": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "armor": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "saving_throws": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        },
+        "skills": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "expertise_choice_count": 0,
+          "expertise_choices": [],
+          "notes": null
+        },
+        "other": {
+          "granted": [],
+          "choice_count": 0,
+          "choices": [],
+          "notes": null
+        }
+      },
+      "followup_choices": [
+        {
+          "id": "ability_score_increase",
+          "type": "ability_score_increase",
+          "count": 1,
+          "options": [
+            "STR",
+            "DEX"
+          ],
+          "distribution": "one score +1",
+          "max_score": 20,
+          "rules": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+"export_version": 2,
+"exported_at": "2026-04-23T04:49:19.664Z",
+"submitted_by": "Jake Test 6",
+"character": {
+"name": "Carian",
+"level": 8,
+"point_buy": {
+"STR": 8,
+"DEX": 8,
+"CON": 8,
+"INT": 8,
+"WIS": 8,
+"CHA": 8
+},
+"species": {
+"name": "",
+"selections": {},
+"record": null
+},
+"background": {
+"name": "",
+"selections": {},
+"record": null
+},
+"class": null,
+"advancement_choices": [
+{
+"level": 4,
+"mode": "Feat",
+"feat_name": "Healer",
+"feat_description": "When you use a Healer's Kit to stabilize or heal a creature, that creature can spend one Hit Die and regain additional hit points equal to the roll plus your proficiency bonus. Dice rolled to determine restored hit points are rerolled if they show 1.",
+"feat_prerequisite": null,
+"feat_category": "Origin",
+"feat_record": {
+"name": "Healer",
+"category": "Origin",
+"prerequisite": null,
+"description": "When you use a Healer's Kit to stabilize or heal a creature, that creature can spend one Hit Die and regain additional hit points equal to the roll plus your proficiency bonus. Dice rolled to determine restored hit points are rerolled if they show 1.",
+"stat_increase": {
+"type": "none",
+"points": 0,
+"distribution": null,
+"choices": [],
+"max_score": null
+},
+"proficiencies": {
+"weapons": {
+"granted": [],
+"choice_count": 0,
+"choices": [],
+"notes": null
+},
+"armor": {
+"granted": [],
+"choice_count": 0,
+"choices": [],
+"notes": null
+},
+"saving_throws": {
+"granted": [],
+"choice_count": 0,
+"choices": [],
+"notes": null
+},
+"skills": {
+"granted": [],
+"choice_count": 0,
+"choices": [],
+"expertise_choice_count": 0,
+"expertise_choices": [],
+"notes": null
+},
+"other": {
+"granted": [],
+"choice_count": 0,
+"choices": [],
+"notes": null
+}
+},
+"followup_choices": []
+},
+"choices": {}
+},
+{
+"level": 8,
+"mode": "Ability Score Improvement",
+"choices": {
+"ability_score_improvement_first": "DEX"
+}
+}
+],
+"ability_scores": {
+"STR": 8,
+"DEX": 10,
+"CON": 8,
+"INT": 8,
+"WIS": 8,
+"CHA": 8
+},
+"ability_modifiers": {
+"STR": -1,
+"DEX": 0,
+"CON": -1,
+"INT": -1,
+"WIS": -1,
+"CHA": -1
+},
+"proficiency_bonus": 3,
+"saving_throws": {
+"STR": {
+"name": "Strength",
+"proficient": false,
+"value": -1
+},
+"DEX": {
+"name": "Dexterity",
+"proficient": false,
+"value": 0
+},
+"CON": {
+"name": "Constitution",
+"proficient": false,
+"value": -1
+},
+"INT": {
+"name": "Intelligence",
+"proficient": false,
+"value": -1
+},
+"WIS": {
+"name": "Wisdom",
+"proficient": false,
+"value": -1
+},
+"CHA": {
+"name": "Charisma",
+"proficient": false,
+"value": -1
+}
+},
+"skills": {
+"Acrobatics": {
+"ability": "DEX",
+"tier": "none",
+"value": 0
+},
+"Animal Handling": {
+"ability": "WIS",
+"tier": "none",
+"value": -1
+},
+"Arcana": {
+"ability": "INT",
+"tier": "none",
+"value": -1
+},
+"Athletics": {
+"ability": "STR",
+"tier": "none",
+"value": -1
+},
+"Deception": {
+"ability": "CHA",
+"tier": "none",
+"value": -1
+},
+"History": {
+"ability": "INT",
+"tier": "none",
+"value": -1
+},
+"Insight": {
+"ability": "WIS",
+"tier": "none",
+"value": -1
+},
+"Intimidation": {
+"ability": "CHA",
+"tier": "none",
+"value": -1
+},
+"Investigation": {
+"ability": "INT",
+"tier": "none",
+"value": -1
+},
+"Medicine": {
+"ability": "WIS",
+"tier": "none",
+"value": -1
+},
+"Nature": {
+"ability": "INT",
+"tier": "none",
+"value": -1
+},
+"Perception": {
+"ability": "WIS",
+"tier": "none",
+"value": -1
+},
+"Performance": {
+"ability": "CHA",
+"tier": "none",
+"value": -1
+},
+"Persuasion": {
+"ability": "CHA",
+"tier": "none",
+"value": -1
+},
+"Religion": {
+"ability": "INT",
+"tier": "none",
+"value": -1
+},
+"Sleight of Hand": {
+"ability": "DEX",
+"tier": "none",
+"value": 0
+},
+"Stealth": {
+"ability": "DEX",
+"tier": "none",
+"value": 0
+},
+"Survival": {
+"ability": "WIS",
+"tier": "none",
+"value": -1
+}
+},
+"proficiencies": {
+"weapons": [],
+"armor": [],
+"saving_throws": [],
+"other": []
+}
+}
+}

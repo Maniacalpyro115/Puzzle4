@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&D 2024 Character Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">D&D 2024 Builder</p>
+        <h1>Character Planner</h1>
+      </div>
+      <div class="top-controls card">
+        <label>
+          <span>Name</span>
+          <input id="characterName" type="text" placeholder="Enter character name" />
+        </label>
+        <label>
+          <span>Level</span>
+          <input id="characterLevel" type="number" min="1" max="20" value="1" />
+        </label>
+      </div>
+    </header>
+
+    <main class="layout-grid">
+      <section class="left-column">
+        <div class="card stats-card">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Starting scores</p>
+              <h2>Point Buy</h2>
+            </div>
+            <div class="point-buy-pill">
+              <span>Points Left</span>
+              <strong id="pointsRemaining">27</strong>
+            </div>
+          </div>
+          <div id="pointBuyGrid" class="point-buy-grid"></div>
+        </div>
+
+        <div class="left-lower-grid">
+          <div class="left-upper-grid">
+            <div class="card">
+              <div class="section-header compact">
+                <div>
+                  <p class="section-kicker">Live totals</p>
+                  <h2>Abilities</h2>
+                </div>
+                <div class="proficiency-pill">PB <strong id="proficiencyBonus">+2</strong></div>
+              </div>
+              <div id="abilitySummary" class="ability-summary"></div>
+            </div>
+
+            <div class="card">
+              <div class="section-header compact">
+                <div>
+                  <p class="section-kicker">Defenses</p>
+                  <h2>Saving Throws</h2>
+                </div>
+              </div>
+              <div id="savingThrows" class="simple-list"></div>
+            </div>
+          </div>
+
+          <div class="card skills-card">
+            <div class="section-header compact">
+              <div>
+                <p class="section-kicker">Proficiencies</p>
+                <h2>Skills</h2>
+              </div>
+            </div>
+            <div id="skillsList" class="simple-list two-col skills-list"></div>
+          </div>
+
+          <div id="classCardMount"></div>
+        </div>
+      </section>
+
+      <section class="right-column">
+        <div class="card summary-card">
+          <div class="section-header compact">
+            <div>
+              <p class="section-kicker">Overview</p>
+              <h2>Selections</h2>
+            </div>
+          </div>
+          <div id="selectionSummary" class="selection-summary"></div>
+          <div class="export-panel">
+            <label>
+              <span>Your Name</span>
+              <input id="submitterName" type="text" placeholder="Enter your name" />
+            </label>
+            <button id="exportCharacterBtn" type="button" class="export-btn">Email Character JSON</button>
+            <div class="export-helper">Sends the full character JSON to your Formspree form.</div>
+            <div id="exportMessage" class="export-message"></div>
+          </div>
+        </div>
+
+        <div id="builderCards" class="builder-cards"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="choiceFieldTemplate">
+    <div class="choice-block"></div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

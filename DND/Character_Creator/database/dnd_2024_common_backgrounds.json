@@ -1,0 +1,918 @@
+[
+  {
+    "name": "Acolyte",
+    "category": "Common",
+    "origin_feat": "Magic Initiate (Cleric)",
+    "ability_score_options": [
+      "INT",
+      "WIS",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Insight",
+        "Religion"
+      ],
+      "other": [
+        "Calligrapher's Supplies"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Artisan",
+    "category": "Common",
+    "origin_feat": "Crafter",
+    "ability_score_options": [
+      "STR",
+      "DEX",
+      "INT"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Investigation",
+        "Persuasion"
+      ],
+      "other": []
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "DEX",
+          "INT"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      },
+      {
+        "id": "tool_choice",
+        "type": "other_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Alchemist's Supplies",
+          "Brewer's Supplies",
+          "Calligrapher's Supplies",
+          "Carpenter's Tools",
+          "Cartographer's Tools",
+          "Cobbler's Tools",
+          "Cook's Utensils",
+          "Glassblower's Tools",
+          "Jeweler's Tools",
+          "Leatherworker's Tools",
+          "Mason's Tools",
+          "Painter's Supplies",
+          "Potter's Tools",
+          "Smith's Tools",
+          "Tinker's Tools",
+          "Weaver's Tools",
+          "Woodcarver's Tools"
+        ],
+        "rules": {
+          "group": "Artisan's Tools",
+          "grant_type": "proficiency"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Charlatan",
+    "category": "Common",
+    "origin_feat": "Skilled",
+    "ability_score_options": [
+      "DEX",
+      "CON",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Deception",
+        "Sleight of Hand"
+      ],
+      "other": [
+        "Forgery Kit"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "DEX",
+          "CON",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Criminal",
+    "category": "Common",
+    "origin_feat": "Alert",
+    "ability_score_options": [
+      "DEX",
+      "CON",
+      "INT"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Sleight of Hand",
+        "Stealth"
+      ],
+      "other": [
+        "Thieves' Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "DEX",
+          "CON",
+          "INT"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Entertainer",
+    "category": "Common",
+    "origin_feat": "Musician",
+    "ability_score_options": [
+      "STR",
+      "DEX",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Acrobatics",
+        "Performance"
+      ],
+      "other": []
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "DEX",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      },
+      {
+        "id": "tool_choice",
+        "type": "other_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Bagpipes",
+          "Drum",
+          "Dulcimer",
+          "Flute",
+          "Horn",
+          "Lute",
+          "Lyre",
+          "Pan Flute",
+          "Shawm",
+          "Viol"
+        ],
+        "rules": {
+          "group": "Musical Instrument",
+          "grant_type": "proficiency"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Farmer",
+    "category": "Common",
+    "origin_feat": "Tough",
+    "ability_score_options": [
+      "STR",
+      "CON",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Animal Handling",
+        "Nature"
+      ],
+      "other": [
+        "Carpenter's Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "CON",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Guard",
+    "category": "Common",
+    "origin_feat": "Alert",
+    "ability_score_options": [
+      "STR",
+      "INT",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Athletics",
+        "Perception"
+      ],
+      "other": []
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "INT",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      },
+      {
+        "id": "tool_choice",
+        "type": "other_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Dice Set",
+          "Dragonchess Set",
+          "Playing Card Set",
+          "Three-Dragon Ante Set"
+        ],
+        "rules": {
+          "group": "Gaming Set",
+          "grant_type": "proficiency"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Guide",
+    "category": "Common",
+    "origin_feat": "Magic Initiate (Druid)",
+    "ability_score_options": [
+      "DEX",
+      "CON",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Stealth",
+        "Survival"
+      ],
+      "other": [
+        "Cartographer's Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "DEX",
+          "CON",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Hermit",
+    "category": "Common",
+    "origin_feat": "Healer",
+    "ability_score_options": [
+      "CON",
+      "WIS",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Medicine",
+        "Religion"
+      ],
+      "other": [
+        "Herbalism Kit"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "CON",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Merchant",
+    "category": "Common",
+    "origin_feat": "Lucky",
+    "ability_score_options": [
+      "CON",
+      "INT",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Animal Handling",
+        "Persuasion"
+      ],
+      "other": [
+        "Navigator's Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "CON",
+          "INT",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Noble",
+    "category": "Common",
+    "origin_feat": "Skilled",
+    "ability_score_options": [
+      "STR",
+      "INT",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "History",
+        "Persuasion"
+      ],
+      "other": []
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "INT",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      },
+      {
+        "id": "tool_choice",
+        "type": "other_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Dice Set",
+          "Dragonchess Set",
+          "Playing Card Set",
+          "Three-Dragon Ante Set"
+        ],
+        "rules": {
+          "group": "Gaming Set",
+          "grant_type": "proficiency"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sage",
+    "category": "Common",
+    "origin_feat": "Magic Initiate (Wizard)",
+    "ability_score_options": [
+      "CON",
+      "INT",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Arcana",
+        "History"
+      ],
+      "other": [
+        "Calligrapher's Supplies"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "CON",
+          "INT",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sailor",
+    "category": "Common",
+    "origin_feat": "Tavern Brawler",
+    "ability_score_options": [
+      "STR",
+      "DEX",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Acrobatics",
+        "Perception"
+      ],
+      "other": [
+        "Navigator's Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "DEX",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Scribe",
+    "category": "Common",
+    "origin_feat": "Skilled",
+    "ability_score_options": [
+      "DEX",
+      "INT",
+      "WIS"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Investigation",
+        "Perception"
+      ],
+      "other": [
+        "Calligrapher's Supplies"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "DEX",
+          "INT",
+          "WIS"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  },
+  {
+    "name": "Soldier",
+    "category": "Common",
+    "origin_feat": "Savage Attacker",
+    "ability_score_options": [
+      "STR",
+      "DEX",
+      "CON"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Athletics",
+        "Intimidation"
+      ],
+      "other": []
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "STR",
+          "DEX",
+          "CON"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      },
+      {
+        "id": "tool_choice",
+        "type": "other_proficiency_choice",
+        "count": 1,
+        "options": [
+          "Dice Set",
+          "Dragonchess Set",
+          "Playing Card Set",
+          "Three-Dragon Ante Set"
+        ],
+        "rules": {
+          "group": "Gaming Set",
+          "grant_type": "proficiency"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wayfarer",
+    "category": "Common",
+    "origin_feat": "Lucky",
+    "ability_score_options": [
+      "DEX",
+      "WIS",
+      "CHA"
+    ],
+    "ability_score_rule": {
+      "total_points": 3,
+      "max_to_one_score": 2,
+      "allowed_distributions": [
+        "2-1-0",
+        "1-1-1"
+      ],
+      "max_score": 20
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Insight",
+        "Stealth"
+      ],
+      "other": [
+        "Thieves' Tools"
+      ]
+    },
+    "followup_choices": [
+      {
+        "id": "ability_scores",
+        "type": "ability_score_allocation",
+        "count": 3,
+        "options": [
+          "DEX",
+          "WIS",
+          "CHA"
+        ],
+        "rules": {
+          "total_points": 3,
+          "max_to_one_score": 2,
+          "allowed_distributions": [
+            "2-1-0",
+            "1-1-1"
+          ],
+          "max_score": 20
+        }
+      }
+    ]
+  }
+]

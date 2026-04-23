@@ -1,0 +1,596 @@
+[
+  {
+    "name": "Artificer",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons"
+      ],
+      "armor": [
+        "Light armor",
+        "Medium armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "CON",
+        "INT"
+      ],
+      "skills": [],
+      "other": [
+        "Thieves' Tools",
+        "Tinker's Tools"
+      ]
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Arcana",
+        "History",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Sleight of Hand"
+      ]
+    },
+    "subclasses": [
+      "Alchemist",
+      "Armorer",
+      "Artillerist",
+      "Battle Smith",
+      "Cartographer"
+    ]
+  },
+  {
+    "name": "Barbarian",
+    "hit_die": "d12",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Martial weapons"
+      ],
+      "armor": [
+        "Light armor",
+        "Medium armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "STR",
+        "CON"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Animal Handling",
+        "Athletics",
+        "Intimidation",
+        "Nature",
+        "Perception",
+        "Survival"
+      ]
+    },
+    "subclasses": [
+      "Ancestral Guardian",
+      "Battlerager",
+      "Beast",
+      "Berserker",
+      "Giant",
+      "Juggernaut",
+      "Storm Herald",
+      "Totem Warrior",
+      "Wild Heart",
+      "Wild Magic",
+      "World Tree",
+      "Zealot"
+    ]
+  },
+  {
+    "name": "Bard",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons"
+      ],
+      "armor": [
+        "Light armor"
+      ],
+      "saving_throws": [
+        "DEX",
+        "CHA"
+      ],
+      "skills": [],
+      "other": [
+        "Musical Instrument x3"
+      ]
+    },
+    "skill_choices": {
+      "count": 3,
+      "options": [
+        "Acrobatics",
+        "Animal Handling",
+        "Arcana",
+        "Athletics",
+        "Deception",
+        "History",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Performance",
+        "Persuasion",
+        "Religion",
+        "Sleight of Hand",
+        "Stealth",
+        "Survival"
+      ]
+    },
+    "subclasses": [
+      "Creation",
+      "Dance",
+      "Eloquence",
+      "Glamour",
+      "Lore",
+      "Spirits",
+      "Swords",
+      "Valor",
+      "Whispers"
+    ]
+  },
+  {
+    "name": "Cleric",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons"
+      ],
+      "armor": [
+        "Light armor",
+        "Medium armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "WIS",
+        "CHA"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "History",
+        "Insight",
+        "Medicine",
+        "Persuasion",
+        "Religion"
+      ]
+    },
+    "subclasses": [
+      "Arcana",
+      "Death",
+      "Forge",
+      "Grave",
+      "Knowledge",
+      "Life",
+      "Light",
+      "Nature",
+      "Order",
+      "Peace",
+      "Tempest",
+      "Trickery",
+      "Twilight",
+      "War"
+    ]
+  },
+  {
+    "name": "Druid",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Club",
+        "Dagger",
+        "Dart",
+        "Javelin",
+        "Mace",
+        "Quarterstaff",
+        "Scimitar",
+        "Sickle",
+        "Sling",
+        "Spear"
+      ],
+      "armor": [
+        "Light armor",
+        "Medium armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "INT",
+        "WIS"
+      ],
+      "skills": [],
+      "other": [
+        "Herbalism Kit"
+      ]
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Arcana",
+        "Animal Handling",
+        "Insight",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Religion",
+        "Survival"
+      ]
+    },
+    "subclasses": [
+      "Dreams",
+      "Land",
+      "Moon",
+      "Sea",
+      "Shepherd",
+      "Spores",
+      "Stars",
+      "Wildfire"
+    ]
+  },
+  {
+    "name": "Fighter",
+    "hit_die": "d10",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Martial weapons"
+      ],
+      "armor": [
+        "All armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "STR",
+        "CON"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Acrobatics",
+        "Animal Handling",
+        "Athletics",
+        "History",
+        "Insight",
+        "Intimidation",
+        "Perception",
+        "Survival"
+      ]
+    },
+    "subclasses": [
+      "Arcane Archer",
+      "Banneret",
+      "Battle Master",
+      "Cavalier",
+      "Champion",
+      "Echo Knight",
+      "Eldritch Knight",
+      "Psi Warrior",
+      "Rune Knight",
+      "Samurai"
+    ]
+  },
+  {
+    "name": "Monk",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Shortswords"
+      ],
+      "armor": [],
+      "saving_throws": [
+        "STR",
+        "DEX"
+      ],
+      "skills": [],
+      "other": [
+        "Artisan's Tools or Musical Instrument"
+      ]
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Acrobatics",
+        "Athletics",
+        "History",
+        "Insight",
+        "Religion",
+        "Stealth"
+      ]
+    },
+    "subclasses": [
+      "Ascendant Dragon",
+      "Astral Self",
+      "Drunken Master",
+      "Elements",
+      "Kensei",
+      "Long Death",
+      "Mercy",
+      "Open Hand",
+      "Shadow",
+      "Sun Soul"
+    ]
+  },
+  {
+    "name": "Paladin",
+    "hit_die": "d10",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Martial weapons"
+      ],
+      "armor": [
+        "All armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "WIS",
+        "CHA"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Athletics",
+        "Insight",
+        "Intimidation",
+        "Medicine",
+        "Persuasion",
+        "Religion"
+      ]
+    },
+    "subclasses": [
+      "Ancients",
+      "Conquest",
+      "Crown",
+      "Devotion",
+      "Glory",
+      "Oathbreaker",
+      "Redemption",
+      "Vengeance",
+      "Watchers"
+    ]
+  },
+  {
+    "name": "Ranger",
+    "hit_die": "d10",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Martial weapons"
+      ],
+      "armor": [
+        "Light armor",
+        "Medium armor",
+        "Shields"
+      ],
+      "saving_throws": [
+        "STR",
+        "DEX"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 3,
+      "options": [
+        "Animal Handling",
+        "Athletics",
+        "Insight",
+        "Investigation",
+        "Nature",
+        "Perception",
+        "Stealth",
+        "Survival"
+      ]
+    },
+    "subclasses": [
+      "Beast Master",
+      "Drakewarden",
+      "Fey Wanderer",
+      "Gloom Stalker",
+      "Horizon Walker",
+      "Hunter",
+      "Monster Slayer",
+      "Swarmkeeper"
+    ]
+  },
+  {
+    "name": "Rogue",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons",
+        "Hand Crossbows",
+        "Longswords",
+        "Rapiers",
+        "Shortswords"
+      ],
+      "armor": [
+        "Light armor"
+      ],
+      "saving_throws": [
+        "DEX",
+        "INT"
+      ],
+      "skills": [],
+      "other": [
+        "Thieves' Tools"
+      ]
+    },
+    "skill_choices": {
+      "count": 4,
+      "options": [
+        "Acrobatics",
+        "Athletics",
+        "Deception",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Perception",
+        "Persuasion",
+        "Sleight of Hand",
+        "Stealth"
+      ]
+    },
+    "subclasses": [
+      "Arcane Trickster",
+      "Assassin",
+      "Inquisitive",
+      "Mastermind",
+      "Phantom",
+      "Scout",
+      "Soulknife",
+      "Swashbuckler",
+      "Thief"
+    ]
+  },
+  {
+    "name": "Sorcerer",
+    "hit_die": "d6",
+    "proficiencies": {
+      "weapons": [
+        "Daggers",
+        "Darts",
+        "Light Crossbows",
+        "Quarterstaffs",
+        "Slings"
+      ],
+      "armor": [],
+      "saving_throws": [
+        "CON",
+        "CHA"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Arcana",
+        "Deception",
+        "Insight",
+        "Intimidation",
+        "Persuasion",
+        "Religion"
+      ]
+    },
+    "subclasses": [
+      "Aberrant",
+      "Clockwork",
+      "Divine Soul",
+      "Draconic",
+      "Lunar",
+      "Shadow",
+      "Storm",
+      "Wild Magic"
+    ]
+  },
+  {
+    "name": "Warlock",
+    "hit_die": "d8",
+    "proficiencies": {
+      "weapons": [
+        "Simple weapons"
+      ],
+      "armor": [
+        "Light armor"
+      ],
+      "saving_throws": [
+        "WIS",
+        "CHA"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Arcana",
+        "Deception",
+        "History",
+        "Intimidation",
+        "Investigation",
+        "Nature",
+        "Religion"
+      ]
+    },
+    "subclasses": [
+      "Archfey",
+      "Celestial",
+      "Fathomless",
+      "Fiend",
+      "Genie",
+      "Great Old One",
+      "Hexblade",
+      "Undead",
+      "Undying"
+    ]
+  },
+  {
+    "name": "Wizard",
+    "hit_die": "d6",
+    "proficiencies": {
+      "weapons": [
+        "Daggers",
+        "Darts",
+        "Light Crossbows",
+        "Quarterstaffs",
+        "Slings"
+      ],
+      "armor": [],
+      "saving_throws": [
+        "INT",
+        "WIS"
+      ],
+      "skills": [],
+      "other": []
+    },
+    "skill_choices": {
+      "count": 2,
+      "options": [
+        "Arcana",
+        "History",
+        "Insight",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Religion"
+      ]
+    },
+    "subclasses": [
+      "Abjurer",
+      "Bladesinging",
+      "Chronurgy",
+      "Conjuration",
+      "Divination",
+      "Enchantment",
+      "Evocation",
+      "Graviturgy",
+      "Illusion",
+      "Necromancy",
+      "Order of Scribes",
+      "Transmutation",
+      "War Magic"
+    ]
+  }
+]
