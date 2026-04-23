@@ -528,6 +528,46 @@
     "activated_choices": []
   },
   {
+    "name": "Tabaxi",
+    "category": "Legacy Species",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "creature_type": "Humanoid",
+    "size_options": [
+      "Medium",
+      "Small"
+    ],
+    "speed": 30,
+    "darkvision": 60,
+    "proficiencies": {
+      "weapons": [],
+      "armor": [],
+      "saving_throws": [],
+      "skills": [
+        "Perception",
+        "Stealth"
+      ],
+      "other": []
+    },
+    "abilities": [
+      "Cat's Claws: you have a climbing speed equal to your speed, and your claws can be used to make unarmed strikes that deal slashing damage.",
+      "Cat's Talent: gain proficiency in Perception and Stealth.",
+      "Feline Agility: when you move on your turn in combat, you can double your speed until the end of the turn; once you use this trait, you can't use it again until you move 0 feet on one of your turns."
+    ],
+    "followup_choices": [
+      {
+        "id": "size_choice",
+        "type": "size_choice",
+        "count": 1,
+        "options": [
+          "Medium",
+          "Small"
+        ],
+        "rules": {}
+      }
+    ],
+    "activated_choices": []
+  },
+  {
     "name": "Tiefling",
     "category": "Standard Species",
     "source": "2024 Player's Handbook / Basic Rules",
