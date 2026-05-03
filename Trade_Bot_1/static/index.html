@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Kalshi Bot Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 14px;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin: 0 0 8px 0;
+      font-size: 17px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 10px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .compact-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      align-items: end;
+    }
+
+    .compact-row.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .compact-row.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #cbd5e1;
+      margin-bottom: 3px;
+    }
+
+    input {
+      width: 100%;
+      padding: 6px;
+      border-radius: 7px;
+      border: 1px solid #475569;
+      background: #020617;
+      color: #e5e7eb;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .danger-button {
+      background: #dc2626;
+    }
+
+    .danger-button:hover {
+      background: #b91c1c;
+    }
+
+    .success-button {
+      background: #16a34a;
+    }
+
+    .success-button:hover {
+      background: #15803d;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #334155;
+      padding: 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .status-enabled,
+    .status-running {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .status-disabled,
+    .status-stopped {
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    .small {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .warning {
+      color: #fbbf24;
+      font-size: 12px;
+      margin: 6px 0;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .metric {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .metric-label {
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    .metric-value {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 3px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 180px;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+    }
+
+    .full {
+      grid-column: span 2;
+    }
+
+    .half-scroll {
+      max-height: 260px;
+      overflow: auto;
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: span 1;
+      }
+
+      .compact-row,
+      .compact-row.two,
+      .compact-row.three,
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Kalshi Bot Dashboard</h1>
+    <div class="small">
+      Process: <span id="trader_process_status"></span>
+      <span id="trader_pid"></span>
+      &nbsp; | &nbsp;
+      Strategy: <span id="status"></span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Controls</h2>
+
+      <div class="compact-row two">
+        <div>
+          <label>Admin Password</label>
+          <input id="admin_password" type="password" value="test123" />
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <div class="button-row" style="margin-top:0;">
+            <button class="success-button" onclick="startTrader()">Start Trader</button>
+            <button class="danger-button" onclick="stopTrader()">Stop Trader</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="small" id="trader_message"></p>
+
+      <h2 style="margin-top:10px;">Strategy Config</h2>
+
+      <div class="compact-row three">
+        <label>
+          <input id="enabled" type="checkbox" />
+          Enabled
+        </label>
+
+        <label>
+          <input id="dry_run" type="checkbox" />
+          Dry Run
+        </label>
+
+        <div class="warning">
+          Unchecking Dry Run can place real orders.
+        </div>
+      </div>
+
+      <div class="compact-row">
+        <div>
+          <label>Min Sec Left</label>
+          <input id="min_seconds_left" type="number" step="1" />
+        </div>
+
+        <div>
+          <label>Max Sec Left</label>
+          <input id="max_seconds_left" type="number" step="1" />
+        </div>
+
+        <div>
+          <label>Bid Min</label>
+          <input id="bid_range_min" type="number" step="0.001" />
+        </div>
+
+        <div>
+          <label>Bid Max</label>
+          <input id="bid_range_max" type="number" step="0.001" />
+        </div>
+      </div>
+
+      <div class="compact-row three" style="margin-top:8px;">
+        <div>
+          <label>Contracts To Buy</label>
+          <input id="contracts_to_buy" type="number" step="1" />
+        </div>
+
+        <div>
+          <label>Max Trades / Market</label>
+          <input id="max_trades_per_market" type="number" step="1" />
+        </div>
+
+        <div>
+          <label>&nbsp;</label>
+          <button onclick="saveConfig()">Save Config</button>
+        </div>
+      </div>
+
+      <p class="small" id="save_message"></p>
+    </div>
+
+    <div class="card">
+      <h2>Balance</h2>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Available Balance</div>
+          <div class="metric-value" id="balance_value">$--</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">Portfolio Value</div>
+          <div class="metric-value" id="portfolio_value">$--</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">Last Snapshot</div>
+          <div class="metric-value" id="balance_time" style="font-size:13px;">--</div>
+        </div>
+      </div>
+
+      <canvas id="balance_chart" width="900" height="220"></canvas>
+
+      <div class="button-row">
+        <button onclick="snapshotBalance()">Snapshot Balance</button>
+      </div>
+
+      <p class="small">
+        Graph uses saved balance snapshots. It updates when you click Snapshot Balance and periodically while the page is open.
+      </p>
+    </div>
+
+    <div class="card full">
+      <h2>Latest Samples</h2>
+      <div class="half-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Sec Left</th>
+              <th>YES Bid</th>
+              <th>NO Bid</th>
+              <th>Chosen</th>
+              <th>Bid</th>
+              <th>Trigger</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody id="samples"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Trade Decisions</h2>
+      <div class="half-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Action</th>
+              <th>Side</th>
+              <th>Bid</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody id="decisions"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Orders / Dry-Run Orders</h2>
+      <div class="half-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Side</th>
+              <th>Bid</th>
+              <th>Contracts</th>
+              <th>Dry</th>
+              <th>Attempt</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="orders"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let lastBalanceSnapshotMs = 0;
+
+    function adminPassword() {
+      return document.getElementById("admin_password").value;
+    }
+
+    function money(value) {
+      if (value === null || value === undefined || value === "") return "$--";
+      return "$" + Number(value).toFixed(2);
+    }
+
+    function shortTime(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      return d.toLocaleTimeString();
+    }
+
+    function updateStatusLabel() {
+      const enabled = document.getElementById("enabled").checked;
+      const status = document.getElementById("status");
+
+      if (enabled) {
+        status.textContent = "ENABLED";
+        status.className = "status-enabled";
+      } else {
+        status.textContent = "DISABLED";
+        status.className = "status-disabled";
+      }
+    }
+
+    async function loadTraderStatus() {
+      const res = await fetch("/api/trader/status");
+      const s = await res.json();
+
+      const status = document.getElementById("trader_process_status");
+      const pid = document.getElementById("trader_pid");
+
+      if (s.running) {
+        status.textContent = "RUNNING";
+        status.className = "status-running";
+        pid.textContent = " PID: " + s.pid;
+      } else {
+        status.textContent = "STOPPED";
+        status.className = "status-stopped";
+        pid.textContent = "";
+      }
+    }
+
+    async function startTrader() {
+      const res = await fetch("/api/trader/start", {
+        method: "POST",
+        headers: {
+          "X-Admin-Password": adminPassword()
+        }
+      });
+
+      const data = await res.json();
+      document.getElementById("trader_message").textContent = data.message ?? JSON.stringify(data);
+
+      await loadTraderStatus();
+    }
+
+    async function stopTrader() {
+      const res = await fetch("/api/trader/stop", {
+        method: "POST",
+        headers: {
+          "X-Admin-Password": adminPassword()
+        }
+      });
+
+      const data = await res.json();
+      document.getElementById("trader_message").textContent = data.message ?? JSON.stringify(data);
+
+      await loadTraderStatus();
+    }
+
+    async function loadConfig() {
+      const res = await fetch("/api/config");
+      const c = await res.json();
+
+      document.getElementById("enabled").checked = Boolean(c.enabled);
+      document.getElementById("dry_run").checked = Boolean(c.dry_run);
+      document.getElementById("min_seconds_left").value = c.min_seconds_left;
+      document.getElementById("max_seconds_left").value = c.max_seconds_left;
+      document.getElementById("bid_range_min").value = c.bid_range_min;
+      document.getElementById("bid_range_max").value = c.bid_range_max;
+      document.getElementById("contracts_to_buy").value = c.contracts_to_buy;
+      document.getElementById("max_trades_per_market").value = c.max_trades_per_market;
+
+      updateStatusLabel();
+    }
+
+    async function saveConfig() {
+      const body = {
+        enabled: document.getElementById("enabled").checked,
+        dry_run: document.getElementById("dry_run").checked,
+        min_seconds_left: Number(document.getElementById("min_seconds_left").value),
+        max_seconds_left: Number(document.getElementById("max_seconds_left").value),
+        bid_range_min: Number(document.getElementById("bid_range_min").value),
+        bid_range_max: Number(document.getElementById("bid_range_max").value),
+        contracts_to_buy: Number(document.getElementById("contracts_to_buy").value),
+        max_trades_per_market: Number(document.getElementById("max_trades_per_market").value)
+      };
+
+      const res = await fetch("/api/config", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Admin-Password": adminPassword()
+        },
+        body: JSON.stringify(body)
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        document.getElementById("save_message").textContent = "Save failed: " + text;
+        await loadConfig();
+        return;
+      }
+
+      document.getElementById("save_message").textContent = "Saved.";
+      await loadConfig();
+    }
+
+    async function loadSamples() {
+      const res = await fetch("/api/samples?limit=20");
+      const rows = await res.json();
+
+      const tbody = document.getElementById("samples");
+      tbody.innerHTML = "";
+
+      rows.slice(-10).reverse().forEach(r => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${shortTime(r.sampled_at_utc)}</td>
+          <td>${r.seconds_until_market_close ?? ""}</td>
+          <td>${r.yes_bid ?? ""}</td>
+          <td>${r.no_bid ?? ""}</td>
+          <td>${r.chosen_side ?? ""}</td>
+          <td>${r.chosen_bid ?? ""}</td>
+          <td>${r.trigger_met ? "YES" : ""}</td>
+          <td>${r.trigger_reason ?? ""}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function loadDecisions() {
+      const res = await fetch("/api/decisions?limit=50");
+      const rows = await res.json();
+
+      const tbody = document.getElementById("decisions");
+      tbody.innerHTML = "";
+
+      rows.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${shortTime(r.decided_at_utc)}</td>
+          <td>${r.action ?? ""}</td>
+          <td>${r.chosen_side ?? ""}</td>
+          <td>${r.chosen_bid ?? ""}</td>
+          <td>${r.reason ?? ""}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function loadOrders() {
+      const res = await fetch("/api/orders?limit=50");
+      const rows = await res.json();
+
+      const tbody = document.getElementById("orders");
+      tbody.innerHTML = "";
+
+      rows.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${shortTime(r.ordered_at_utc)}</td>
+          <td>${r.chosen_side ?? ""}</td>
+          <td>${r.chosen_bid ?? ""}</td>
+          <td>${r.contracts ?? ""}</td>
+          <td>${r.dry_run ? "YES" : "NO"}</td>
+          <td>${r.attempt_number ?? ""}</td>
+          <td>${r.status_code ?? ""}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function snapshotBalance() {
+      const res = await fetch("/api/balance/snapshot", {
+        method: "POST",
+        headers: {
+          "X-Admin-Password": adminPassword()
+        }
+      });
+
+      if (!res.ok) {
+        console.error("Balance snapshot failed", await res.text());
+        return;
+      }
+
+      await loadBalance();
+    }
+
+    async function maybeSnapshotBalance() {
+      const now = Date.now();
+
+      if (now - lastBalanceSnapshotMs < 30000) {
+        return;
+      }
+
+      lastBalanceSnapshotMs = now;
+
+      try {
+        await snapshotBalance();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function loadBalance() {
+      const latestRes = await fetch("/api/balance/latest");
+      const latest = await latestRes.json();
+
+      if (latest) {
+        document.getElementById("balance_value").textContent = money(latest.balance_dollars);
+        document.getElementById("portfolio_value").textContent = money(latest.portfolio_value_dollars);
+        document.getElementById("balance_time").textContent = shortTime(latest.pulled_at_utc);
+      }
+
+      const histRes = await fetch("/api/balance/history?limit=200");
+      const history = await histRes.json();
+
+      drawBalanceChart(history);
+    }
+
+    function drawBalanceChart(rows) {
+      const canvas = document.getElementById("balance_chart");
+      const ctx = canvas.getContext("2d");
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (!rows || rows.length < 2) {
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "16px Arial";
+        ctx.fillText("Need at least 2 balance snapshots for graph.", 20, 40);
+        return;
+      }
+
+      const values = rows
+        .map(r => r.portfolio_value_dollars)
+        .filter(v => v !== null && v !== undefined);
+
+      if (values.length < 2) {
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "16px Arial";
+        ctx.fillText("No portfolio values yet.", 20, 40);
+        return;
+      }
+
+      const minVal = Math.min(...values);
+      const maxVal = Math.max(...values);
+      const pad = 24;
+      const w = canvas.width - pad * 2;
+      const h = canvas.height - pad * 2;
+      const range = maxVal - minVal || 1;
+
+      ctx.strokeStyle = "#334155";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(pad, pad);
+      ctx.lineTo(pad, pad + h);
+      ctx.lineTo(pad + w, pad + h);
+      ctx.stroke();
+
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "12px Arial";
+      ctx.fillText("$" + maxVal.toFixed(2), 4, pad + 4);
+      ctx.fillText("$" + minVal.toFixed(2), 4, pad + h);
+
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+
+      rows.forEach((r, i) => {
+        const v = r.portfolio_value_dollars;
+        const x = pad + (i / (rows.length - 1)) * w;
+        const y = pad + h - ((v - minVal) / range) * h;
+
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      });
+
+      ctx.stroke();
+
+      const last = rows[rows.length - 1];
+      ctx.fillStyle = "#e5e7eb";
+      ctx.font = "13px Arial";
+      ctx.fillText("Portfolio Value", pad + 8, pad + 16);
+      ctx.fillText(money(last.portfolio_value_dollars), pad + 8, pad + 34);
+    }
+
+    async function refreshLiveData() {
+      await loadTraderStatus();
+      await loadSamples();
+      await loadDecisions();
+      await loadOrders();
+      await loadBalance();
+      await maybeSnapshotBalance();
+    }
+
+    document.getElementById("enabled").addEventListener("change", updateStatusLabel);
+
+    loadConfig();
+    refreshLiveData();
+    setInterval(refreshLiveData, 5000);
+  </script>
+</body>
+</html>
