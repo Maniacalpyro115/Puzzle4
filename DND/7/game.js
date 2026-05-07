@@ -61,6 +61,7 @@
   const sounds = {
     itemUse: loadSound("sounds/snd_heal_c.wav"),
     menuMove: loadSound("sounds/snd_select.wav"),
+    menuSelect: loadSound("sounds/snd_select.wav"),
     battleTheme: loadSound("sounds/linedance_battle.wav"),
   };
 
@@ -197,6 +198,7 @@
     enemyTimer: 0,
     enemyWarmup: 75,
     enemyDuration: 640,
+    pattern: -1,
     shake: 0,
   };
 
@@ -289,9 +291,11 @@
     state.phase = PHASE.ENEMY;
     state.bullets = [];
     state.enemyTimer = -state.enemyWarmup;
+
     const patternCount = Array.isArray(enemyData.attackPatterns)
       ? enemyData.attackPatterns.length
       : 5;
+
     state.pattern = (state.pattern + 1) % patternCount;
     state.soul.x = state.box.x + state.box.w / 2;
     state.soul.y = state.box.y + state.box.h / 2;
@@ -535,7 +539,7 @@
       b.angle += b.spin;
       b.life--;
 
-      if (collides(state.soul, b) && state.soul.invuln <= 0) {
+      if (!b.harmless && collides(state.soul, b) && state.soul.invuln <= 0) {
         state.playerHP = Math.max(0, state.playerHP - 3);
         state.soul.invuln = 50;
         state.shake = 10;
@@ -645,7 +649,14 @@
 
       if (mouseClick) {
         const idx = menuHit(mouseClick.x, mouseClick.y);
-        if (idx !== -1) state.selected = idx;
+
+        if (idx !== -1) {
+          if (idx !== state.selected) {
+            playSound(sounds.menuMove);
+          }
+
+          state.selected = idx;
+        }
       }
 
       if (confirm) {
@@ -671,6 +682,10 @@
           const backHit = itemBackHit(mouseClick.x, mouseClick.y);
 
           if (itemIdx !== -1) {
+            if (itemIdx !== state.selectedItem) {
+              playSound(sounds.menuMove);
+            }
+
             state.selectedItem = itemIdx;
             useSelectedItem();
           } else if (backHit) {
@@ -747,11 +762,11 @@
     state.playerHP = state.maxHP;
     state.enemyHP = state.enemyMaxHP;
     state.dialogIndex = 0;
+    state.pattern = -1;
     state.inventory = createInventory(enemyData.items);
     state.bullets = [];
     state.message = enemyData.introMessage;
     state.textTimer = 0;
-    state.pattern = -1;
   }
 
   function draw() {
@@ -1100,7 +1115,7 @@
   }
 
   function drawBullet(b) {
-    if (sprites.projectile.ready) {
+    if (sprites.projectile.ready && b.type === "dot") {
       ctx.save();
       ctx.translate(b.x, b.y);
       ctx.rotate(b.angle);
@@ -1138,7 +1153,6 @@
       ctx.fillRect(-b.r * 0.45, -b.r, b.r * 0.75, b.r * 1.45);
       ctx.fillRect(-b.r * 0.45, b.r * 0.25, b.r * 1.45, b.r * 0.5);
       ctx.fillRect(b.r * 0.45, b.r * 0.55, b.r * 0.55, b.r * 0.3);
-
     } else if (b.type === "star") {
       ctx.beginPath();
 
@@ -1154,7 +1168,6 @@
 
       ctx.closePath();
       ctx.stroke();
-
     } else if (b.type === "horseshoe") {
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -1163,7 +1176,6 @@
 
       ctx.fillRect(-b.r * 0.9, b.r * 0.45, 5, 7);
       ctx.fillRect(b.r * 0.55, b.r * 0.45, 5, 7);
-
     } else if (b.type === "note") {
       ctx.beginPath();
       ctx.arc(-b.r * 0.35, b.r * 0.45, b.r * 0.45, 0, Math.PI * 2);
@@ -1191,6 +1203,7 @@
 
     if (state.phase === PHASE.WIN) {
       title = "OBISCWTPDNDWMFT";
+      sub = "Press Enter / Z / Click to restart";
     }
 
     if (state.phase === PHASE.LOSE) {
