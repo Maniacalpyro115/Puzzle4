@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-pandas
-requests
-websockets
-cryptography
-python-dotenv
