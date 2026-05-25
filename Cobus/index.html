@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Destiny Raid History</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <form id="search-form" class="search" autocomplete="off">
+        <label class="sr-only" for="bungie-name">Bungie name</label>
+        <input
+          id="bungie-name"
+          name="bungie_name"
+          type="text"
+          value="Pyro#0222"
+          placeholder="Bungie name, e.g. Pyro#0222"
+          required
+        >
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <main class="page">
+      <section id="intro" class="intro">
+        <p class="eyebrow">Destiny 2</p>
+        <h1>Pyro's Last Raid Completion Loader</h1>
+        <p>Enter full Bungie name (xxxx#yyyy) to view most recent raid completion / loadout</p>
+      </section>
+
+      <section id="status" class="status" aria-live="polite"></section>
+
+      <section id="summary" class="summary hidden" aria-live="polite">
+        <div>
+          <p class="eyebrow">Guardian</p>
+          <h2 id="player-name"></h2>
+          <p class="availability">Weapons are reported activity usage. Historical subclass snapshots are not returned by Bungie.</p>
+        </div>
+      </section>
+
+      <section id="raid-grid" class="raid-grid" aria-label="Latest completed raid loadouts"></section>
+    </main>
+  </body>
+</html>
