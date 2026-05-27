@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soul Battle</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" width="900" height="650" aria-label="Soul Battle game canvas"></canvas>
+    <section class="help">
+      <strong>Controls:</strong> Arrow Keys / WASD to move · Enter/Z to select · Esc/X to cancel · During attack: Enter/Z/Click to strike
+    </section>
+  </main>
+
+  <script src="enemies/bravouros.js"></script>
+  <script src="engine/constants.js"></script>
+  <script src="engine/utils.js"></script>
+  <script src="engine/assets.js"></script>
+  <script src="engine/input.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
