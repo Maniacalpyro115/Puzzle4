@@ -1967,6 +1967,7 @@
   }
 
   function update() {
+    return;
     if (state.phase === PHASE.BOX_MORPH) {
       updateBoxMorph();
       input.consume();
