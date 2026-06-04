@@ -1967,7 +1967,7 @@
   }
 
   function update() {
-    return;
+   // return; ZLL
     if (state.phase === PHASE.BOX_MORPH) {
       updateBoxMorph();
       input.consume();
