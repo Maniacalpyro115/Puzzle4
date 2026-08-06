@@ -1495,12 +1495,15 @@
     },
     defeatDissolve: {
       timer: 0,
-      duration: 180,
+      dialogDuration: 180,
       dissolveDuration: 112,
+      particleTailDuration: 45,
       pixelSize: 6,
-      spriteSize: 330,
-      spriteTop: 5,
-      spriteKey: "enemy",
+      spriteSize: 150,
+      spriteX: 0,
+      spriteTop: 0,
+      spriteKey: "hit",
+      started: false,
       releasedRows: 0,
       particles: [],
       source: null,
@@ -3220,13 +3223,24 @@
 
   function beginDefeatDissolve() {
     const dissolve = state.defeatDissolve;
+    const configuredHitSprite = currentBossData().hitSprite || enemyData.hitSprite;
+    const hitSpriteKey = typeof configuredHitSprite === "string" && sprites[configuredHitSprite]
+      ? configuredHitSprite
+      : activeEnemySpriteKey();
+    const spriteSize = enemySpriteSize(hitSpriteKey);
+    const spritePosition = enemySpritePosition(spriteSize, hitSpriteKey);
 
-    playSound(sounds.vaporized);
     state.phase = PHASE.DEFEAT_DISSOLVE;
+    state.box = { ...BOX_RECT.TEXT };
     state.message = currentBossData().winMessage || enemyData.winMessage;
+    state.enemyDialogMessage = "Its time... for me... to... flake...";
+    state.enemyDialogTimer = 0;
     dissolve.timer = 0;
-    dissolve.spriteTop = 5 + enemySpriteBobOffset();
-    dissolve.spriteKey = activeEnemySpriteKey();
+    dissolve.spriteSize = spriteSize;
+    dissolve.spriteX = spritePosition.x;
+    dissolve.spriteTop = spritePosition.y + enemySpriteBobOffset();
+    dissolve.spriteKey = hitSpriteKey;
+    dissolve.started = false;
     dissolve.releasedRows = 0;
     dissolve.particles = [];
     dissolve.source = captureEnemySprite(dissolve.spriteKey, dissolve.spriteSize);
@@ -3235,20 +3249,34 @@
   function updateDefeatDissolve() {
     const dissolve = state.defeatDissolve;
     const rowCount = Math.ceil(dissolve.spriteSize / dissolve.pixelSize);
-    const progress = clamp(dissolve.timer / dissolve.dissolveDuration, 0, 1);
+    const dissolveTimer = Math.max(0, dissolve.timer - dissolve.dialogDuration);
+    const progress = clamp(dissolveTimer / dissolve.dissolveDuration, 0, 1);
     const targetRows = Math.floor(easeInOutCubic(progress) * rowCount);
 
-    while (dissolve.releasedRows < targetRows) {
-      releaseDissolveRow(dissolve.releasedRows);
-      dissolve.releasedRows++;
+    state.enemyDialogTimer = Math.min(dissolve.timer, dissolve.dialogDuration);
+
+    if (!dissolve.started && dissolve.timer >= dissolve.dialogDuration) {
+      dissolve.started = true;
+      playSound(sounds.vaporized);
+    }
+
+    if (dissolve.started) {
+      while (dissolve.releasedRows < targetRows) {
+        releaseDissolveRow(dissolve.releasedRows);
+        dissolve.releasedRows++;
+      }
     }
 
     updateDissolveParticles(dissolve);
     dissolve.timer++;
 
-    if (dissolve.timer >= dissolve.duration) {
+    if (
+      dissolve.timer >=
+      dissolve.dialogDuration + dissolve.dissolveDuration + dissolve.particleTailDuration
+    ) {
       dissolve.particles = [];
       dissolve.source = null;
+      state.enemyDialogMessage = "";
       state.phase = PHASE.WIN;
     }
   }
@@ -4965,6 +4993,7 @@
     state.mercy.timer = 0;
     state.mercy.success = false;
     state.defeatDissolve.timer = 0;
+    state.defeatDissolve.started = false;
     state.defeatDissolve.releasedRows = 0;
     state.defeatDissolve.particles = [];
     state.defeatDissolve.source = null;
@@ -4997,7 +5026,11 @@
     if (state.phase === PHASE.PLAYER_EFFECT) drawPlayerEffect();
     if (state.phase === PHASE.SPELL_ACTION) drawDamageSpellEffect();
     if (state.phase === PHASE.PERSISTENT_EFFECT) drawPersistentEffectAction();
-    if (state.phase === PHASE.ENEMY_DIALOG || (state.phase === PHASE.TURN_EVENT && state.turnEvent.step && state.turnEvent.step.type === "enemyDialog")) drawEnemySpeechBubble();
+    if (
+      state.phase === PHASE.ENEMY_DIALOG ||
+      (state.phase === PHASE.TURN_EVENT && state.turnEvent.step && state.turnEvent.step.type === "enemyDialog") ||
+      (state.phase === PHASE.DEFEAT_DISSOLVE && state.defeatDissolve.timer < state.defeatDissolve.dialogDuration)
+    ) drawEnemySpeechBubble();
 
     if (state.phase === PHASE.DAMAGE_RESULT) drawDamageResult();
     if (state.phase === PHASE.ENEMY) drawDefenseBox();
@@ -5225,6 +5258,7 @@
 
     source.width = size;
     source.height = size;
+    sourceCtx.imageSmoothingEnabled = false;
     drawPositionedEnemyBody(sourceCtx, enemySprite, 0, 0, size, spriteKey);
     return source;
   }
@@ -5269,9 +5303,10 @@
 
   function drawDefeatDissolve() {
     const dissolve = state.defeatDissolve;
-    const x = W / 2 - dissolve.spriteSize / 2;
+    const x = dissolve.spriteX;
     const y = dissolve.spriteTop;
-    const progress = clamp(dissolve.timer / dissolve.dissolveDuration, 0, 1);
+    const dissolveTimer = Math.max(0, dissolve.timer - dissolve.dialogDuration);
+    const progress = clamp(dissolveTimer / dissolve.dissolveDuration, 0, 1);
     const removedHeight = Math.floor(easeInOutCubic(progress) * dissolve.spriteSize);
     const remainingHeight = dissolve.spriteSize - removedHeight;
 
@@ -5568,7 +5603,7 @@
   }
 
   function drawUI() {
-    if (state.phase === PHASE.INTRO || state.phase === PHASE.WIN || state.phase === PHASE.MERCY_FADE || state.phase === PHASE.SPARED || state.phase === PHASE.ULTIMATE_TRANSITION || state.phase === PHASE.DEFEAT_DISSOLVE || state.phase === PHASE.SCENE) return;
+    if (state.phase === PHASE.INTRO || state.phase === PHASE.WIN || state.phase === PHASE.MERCY_FADE || state.phase === PHASE.SPARED || state.phase === PHASE.ULTIMATE_TRANSITION || state.phase === PHASE.SCENE) return;
 
     drawStats();
     drawTextPanel();
@@ -5589,6 +5624,8 @@
       // The scripted spell renders over the cleared text panel.
     } else if (state.phase === PHASE.PERSISTENT_EFFECT) {
       // Persistent effects render over the cleared text panel.
+    } else if (state.phase === PHASE.DEFEAT_DISSOLVE) {
+      // Keep the party visible while the enemy gives their final line and dissolves.
     } else if (state.phase === PHASE.ITEM) {
       drawItemMenu();
     } else if (state.phase === PHASE.ITEM_TARGET) {
@@ -5649,14 +5686,20 @@
     const w = 264;
     const h = 103;
     const r = 13;
-    const spriteKey = activeEnemySpriteKey();
+    const spriteKey = state.phase === PHASE.DEFEAT_DISSOLVE
+      ? state.defeatDissolve.spriteKey
+      : activeEnemySpriteKey();
     const spriteSize = enemySpriteSize(spriteKey);
     const enemyPosition = enemySpritePosition(spriteSize, spriteKey);
     const x = clamp(enemyPosition.x - w - 26, 20, W - w - 20);
     const y = clamp(enemyPosition.y - h - 17, 20, BOX_RECT.TEXT.y - h - 20);
     const tailBaseY = y + h;
     const message = typeof state.enemyDialogMessage === "string" ? state.enemyDialogMessage : "";
-    const timer = state.phase === PHASE.TURN_EVENT ? state.turnEvent.timer : state.enemyDialogTimer;
+    const timer = state.phase === PHASE.TURN_EVENT
+      ? state.turnEvent.timer
+      : state.phase === PHASE.DEFEAT_DISSOLVE
+        ? state.defeatDissolve.timer
+        : state.enemyDialogTimer;
     const visible = message.slice(0, Math.min(message.length, Math.floor(timer * 1.25)));
 
     ctx.save();

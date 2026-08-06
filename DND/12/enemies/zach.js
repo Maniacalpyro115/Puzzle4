@@ -76,7 +76,7 @@ window.ENEMY_DATA = {
     linedance: 150,
     vampire: 150
   },
-  preserveSpriteAspectRatio: ["default", "thinking", "pointing", "computer", "lightbulb", "vampire"],
+  preserveSpriteAspectRatio: ["default", "hit", "thinking", "pointing", "computer", "lightbulb", "vampire"],
   spritePositions: {
     default: { x: 720, y: 168 },
     hit: { x: 720, y: 168 },
