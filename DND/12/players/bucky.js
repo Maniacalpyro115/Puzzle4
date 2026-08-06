@@ -57,7 +57,7 @@ window.PLAYER_DATA.push({
     {
       name: "Command - Dodge",
       description: "Command beast to block first damage this turn",
-      tpCost: 24,
+      tpCost: 20,
       target: "none",
       effect: "beastDodge",
       requiresBeast: true

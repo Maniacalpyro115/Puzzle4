@@ -37,21 +37,21 @@ window.PLAYER_DATA.push({
     },
     {
       name: "Bless",
-      description: "Permenantly increases player dmg by 20%",
-      tpCost: 48,
+      description: "Permenantly increases player dmg by 25%",
+      tpCost: 40,
       target: "ally",
       effect: "damageBuff",
-      damageMultiplier: 1.2,
+      damageMultiplier: 1.25,
       popupText: "+dmg"
     },
     {
       name: "Cure Wounds",
-      description: "Restore 10 (20 if down) HP to one player",
-      tpCost: 24,
+      description: "Restore 15 (30 if down) HP to one player",
+      tpCost: 20,
       target: "ally",
       effect: "heal",
-      heal: 10,
-      downHeal: 20,
+      heal: 15,
+      downHeal: 30,
       popupText: "+hp"
     },
     {
@@ -60,7 +60,7 @@ window.PLAYER_DATA.push({
       tpCost: 0,
       target: "ally",
       effect: "defendTPBuff",
-      defendTPBonus: 4,
+      defendTPBonus: 6,
       popupText: "+tp"
     },
     {
@@ -72,7 +72,7 @@ window.PLAYER_DATA.push({
       script: "spiritualWeapon",
       persistentId: "spiritualWeapon",
       persistentSprite: "holy_chainsaw",
-      damage: 10
+      damage: 12
     }
   ]
 });

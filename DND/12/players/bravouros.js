@@ -60,11 +60,11 @@ window.PLAYER_DATA.push({
     },
     {
       name: "Cure Wounds",
-      description: "Restores 12 HP to one player",
-      tpCost: 24,
+      description: "Restores 15 HP to one player",
+      tpCost: 20,
       target: "ally",
       effect: "heal",
-      heal: 12,
+      heal: 15,
       popupText: "+hp"
     },
     {
@@ -94,7 +94,7 @@ window.PLAYER_DATA.push({
     {
       name: "Guiding Bolt",
       description: "Deal Medium Damage. First attack on target next turn deals 25% more damage",
-      tpCost: 40,
+      tpCost: 32,
       target: "enemy",
       effect: "damage",
       script: "guidingBolt",

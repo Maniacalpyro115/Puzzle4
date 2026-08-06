@@ -56,21 +56,21 @@ window.PLAYER_DATA.push({
       effect: "damage",
       script: "curtainCall",
       sprite: "curtain_call",
-      damage: 80
+      damage: 85
     },
     {
       name: "Crimson Rite",
-      description: "Permanently increase damage by 15%",
+      description: "Permanently increase damage by 20%",
       hpCost: 5,
       target: "none",
       effect: "damageBuff",
-      damageMultiplier: 1.15,
+      damageMultiplier: 1.2,
       once: true
     },
     {
       name: "Starshot",
       description: "Deal double damage next turn",
-      tpCost: 48,
+      tpCost: 40,
       target: "none",
       effect: "nextTurnDamageBuff",
       damageMultiplier: 2
