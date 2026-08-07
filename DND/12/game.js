@@ -1314,6 +1314,8 @@
     enemyDialogOnComplete: null,
     currentTurn: null,
     consumedTurns: new Set(),
+    seenTurns: new Set(),
+    dialogIndexBeforeAdvance: null,
     turnEvent: {
       steps: [],
       index: -1,
@@ -1545,6 +1547,10 @@
       state.dialogIndex = 0;
     }
 
+    if (!Number.isInteger(state.dialogIndexBeforeAdvance)) {
+      state.dialogIndexBeforeAdvance = state.dialogIndex;
+    }
+
     if (state.dialogIndex < battleDialog.length - 1) {
       state.dialogIndex++;
     }
@@ -1616,13 +1622,20 @@
       if (state.consumedTurns.has(index)) continue;
 
       const turn = normalizeTurn(turns[index]);
+      const repeated = state.seenTurns.has(index);
       state.pattern = index;
+      state.seenTurns.add(index);
+
+      if (repeated && Number.isInteger(state.dialogIndexBeforeAdvance)) {
+        state.dialogIndex = state.dialogIndexBeforeAdvance;
+      }
+      state.dialogIndexBeforeAdvance = null;
 
       if (!turn.loop) {
         state.consumedTurns.add(index);
       }
 
-      return turn;
+      return { ...turn, index, repeated };
     }
 
     return { attack: normalizeAttackPattern(null), event: null, loop: true };
@@ -1639,6 +1652,15 @@
     state.scene.onComplete = null;
     state.turnEvent.onComplete = typeof onComplete === "function" ? onComplete : beginEnemyDialog;
     advanceTurnEvent();
+  }
+
+  function currentTurnEventWithoutRepeatedDialog(event) {
+    if (!event || !state.currentTurn?.repeated) return event;
+
+    const steps = event.steps.filter((step) => (
+      step.type !== "textbox" && step.type !== "enemyDialog"
+    ));
+    return steps.length > 0 ? { steps } : null;
   }
 
   function advanceTurnEvent() {
@@ -1731,12 +1753,17 @@
       return;
     }
 
-    if (state.currentTurn.event) {
-      beginTurnEvent(state.currentTurn.event);
+    const event = currentTurnEventWithoutRepeatedDialog(state.currentTurn.event);
+    if (event) {
+      beginTurnEvent(event, state.currentTurn.repeated ? beginEnemyAttack : beginEnemyDialog);
       return;
     }
 
-    beginEnemyDialog();
+    if (state.currentTurn.repeated) {
+      beginEnemyAttack();
+    } else {
+      beginEnemyDialog();
+    }
   }
 
   function beginChainedEnemyTurn() {
@@ -1748,8 +1775,9 @@
       return;
     }
 
-    if (state.currentTurn.event) {
-      beginTurnEvent(state.currentTurn.event, beginEnemyAttack);
+    const event = currentTurnEventWithoutRepeatedDialog(state.currentTurn.event);
+    if (event) {
+      beginTurnEvent(event, beginEnemyAttack);
       return;
     }
 
@@ -1961,6 +1989,8 @@
     state.pattern = -1;
     state.currentTurn = null;
     state.consumedTurns.clear();
+    state.seenTurns.clear();
+    state.dialogIndexBeforeAdvance = null;
     state.bullets = [];
     state.message = phase2.transitionMessage || "* The music cuts out.";
     state.textTimer = 0;
@@ -3767,9 +3797,13 @@
       state.lastStand.activeAttack = false;
 
       if (state.currentTurn && state.currentTurn.postAttackEvent) {
-        const event = state.currentTurn.postAttackEvent;
+        const event = currentTurnEventWithoutRepeatedDialog(state.currentTurn.postAttackEvent);
         state.box = { ...BOX_RECT.TEXT };
-        beginTurnEvent(event, beginChainedEnemyTurn);
+        if (event) {
+          beginTurnEvent(event, beginChainedEnemyTurn);
+        } else {
+          beginChainedEnemyTurn();
+        }
         return;
       }
 
@@ -4969,6 +5003,8 @@
     state.enemyDialogOnComplete = null;
     state.currentTurn = null;
     state.consumedTurns.clear();
+    state.seenTurns.clear();
+    state.dialogIndexBeforeAdvance = null;
     state.turnEvent.steps = [];
     state.turnEvent.index = -1;
     state.turnEvent.timer = 0;

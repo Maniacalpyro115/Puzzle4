@@ -1116,10 +1116,10 @@ const postBossLoopTurns = [
     sprite: "linedance",
     duration: 900,
     damage: 10,
-    box: { x: 315.5, y: 80.5, w: 269, h: 359 },
+    box: { x: 248, y: 103, w: 404, h: 314 },
     vampireGrid: {
-      cols: 6,
-      rows: 8,
+      cols: 9,
+      rows: 7,
       vampireCount: 4,
       moveIntervalBeats: 2,
       attackDelayBeats: 1,
