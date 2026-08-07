@@ -1085,10 +1085,10 @@ const postBossLoopTurns = [
     sprite: "linedance",
     duration: 900,
     damage: 10,
-    box: { x: 248, y: 103, w: 404, h: 314 },
+    box: { x: 270.5, y: 125.5, w: 359, h: 269 },
     vampireGrid: {
-      cols: 9,
-      rows: 7,
+      cols: 8,
+      rows: 6,
       vampireCount: 4,
       seekSoul: true
     },
@@ -1100,12 +1100,13 @@ const postBossLoopTurns = [
     sprite: "linedance",
     duration: 900,
     damage: 10,
-    box: { x: 248, y: 103, w: 404, h: 314 },
+    box: { x: 270.5, y: 125.5, w: 359, h: 269 },
     vampireGrid: {
-      cols: 9,
-      rows: 7,
+      cols: 8,
+      rows: 6,
       vampireCount: 4,
-      movesPerDownbeat: 2
+      movesPerDownbeat: 2,
+      seekSoul: true
     },
     pattern: function fourVampireDoubleStepDance() {}
   },
@@ -1115,19 +1116,20 @@ const postBossLoopTurns = [
     sprite: "linedance",
     duration: 900,
     damage: 10,
-    box: { x: 293, y: 58, w: 314, h: 404 },
+    box: { x: 315.5, y: 80.5, w: 269, h: 359 },
     vampireGrid: {
-      cols: 7,
-      rows: 9,
+      cols: 6,
+      rows: 8,
       vampireCount: 4,
       moveIntervalBeats: 2,
-      attackDelayBeats: 1
+      attackDelayBeats: 1,
+      seekSoul: true
     },
     pattern: function fourVampireRapidDance() {}
   }
 ];
 
-// Run the adventure once, then loop all post-boss dance attacks forever.
+// Run the adventure once, then loop selected encounters and all post-boss dance attacks forever.
 const authoredZachTurns = window.ENEMY_DATA.turns;
 window.ENEMY_DATA.turns = [
   ...authoredZachTurns.slice(0, 3),
@@ -1148,8 +1150,14 @@ window.ENEMY_DATA.turns = [
   ...postBossLoopTurns
 ];
 
+const repeatingZachPatterns = new Set([
+  "spikedPlatformBatRain",
+  "wolvesAndBats",
+  "fadingBlightBarrages"
+]);
+
 window.ENEMY_DATA.turns.forEach((turn, index) => {
-  turn.loop = index >= 18;
+  turn.loop = index >= 18 || repeatingZachPatterns.has(turn.pattern?.name);
 });
 
 function spawnBeatBatRain({ box, state, musicBeat, spawnBullet, stateKey, speed = 5.2 }) {
