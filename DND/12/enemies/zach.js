@@ -101,7 +101,7 @@ window.ENEMY_DATA = {
     linedance: { x: true },
     vampire: { x: true }
   },
-  maxHP: 900,
+  maxHP: 1000,
   hitSprite: "hit",
 
   introMessage: "* ZACH steps into the fight.",
