@@ -147,7 +147,6 @@ window.ENEMY_DATA = {
     "Zach dances the night away",
     "Zach dances the night away",
     "Zach dances the night away",
-    "Zach dances the night away",
     "Zach dances the night away"
   ],
 
@@ -1071,25 +1070,14 @@ const postBossLoopTurns = [
     sprite: "linedance",
     duration: 780,
     damage: 10,
-    box: { x: 338, y: 193, w: 224, h: 134 },
-    rhythmGrid: {
-      dance: "R[_U]D[_D][UR][LL]L",
-      inputWindow: 0.12
+    box: { x: 383, y: 193, w: 134, h: 134 },
+    freestyleGrid: {
+      cols: 3,
+      rows: 3,
+      rowArrowCount: 2,
+      colArrowCount: 2
     },
-    pattern: function postBossLineDanceThree() {}
-  },
-  {
-    loop: true,
-    type: "purple",
-    sprite: "linedance",
-    duration: 780,
-    damage: 10,
-    box: { x: 338, y: 193, w: 224, h: 134 },
-    rhythmGrid: {
-      dance: "[RD][LU][LR]LRRD",
-      inputWindow: 0.12
-    },
-    pattern: function postBossLineDanceFour() {}
+    pattern: function postBossFreestyleGrid() {}
   },
   {
     loop: true,
@@ -1101,7 +1089,8 @@ const postBossLoopTurns = [
     vampireGrid: {
       cols: 9,
       rows: 7,
-      vampireCount: 4
+      vampireCount: 4,
+      seekSoul: true
     },
     pattern: function fourVampireSoulDance() {}
   },

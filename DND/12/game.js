@@ -2204,7 +2204,7 @@
       if (attackConfig.rhythmGrid) {
         beginRhythmGridAttack(attackConfig.rhythmGrid);
       } else if (attackConfig.freestyleGrid) {
-        beginFreestyleGridAttack();
+        beginFreestyleGridAttack(attackConfig.freestyleGrid);
       } else if (attackConfig.vampireGrid) {
         beginVampireGridAttack(attackConfig.vampireGrid);
       } else if (attackConfig.vampireLordGrid) {
@@ -2245,6 +2245,7 @@
       expectedRow: 1,
       preparedResponseStep: -1,
       inputWindow: Number.isFinite(config.inputWindow) ? config.inputWindow : 0.1,
+      damageHits: 0,
       beatPhase: 0,
       finished: false,
       finishTimer: 0
@@ -2254,28 +2255,40 @@
     state.soul.y = rhythmGridY(1);
   }
 
-  function beginFreestyleGridAttack() {
+  function beginFreestyleGridAttack(config = {}) {
     const music = sounds.battleTheme;
     const elapsed = getMusicElapsed(music);
     const beatDuration = 60 / music.bpm;
     const musicBeat = (elapsed - music.loopStart) / beatDuration;
     const firstDownbeat = Math.ceil((musicBeat + 4) / 4) * 4;
+    const cols = Number.isInteger(config.cols) ? Math.max(3, config.cols) : 5;
+    const rows = Number.isInteger(config.rows) ? Math.max(3, config.rows) : 3;
+    const rowArrowCount = Number.isInteger(config.rowArrowCount)
+      ? clamp(config.rowArrowCount, 1, rows)
+      : 2;
+    const colArrowCount = Number.isInteger(config.colArrowCount)
+      ? clamp(config.colArrowCount, 1, cols)
+      : 2;
+    const centerCol = Math.floor(cols / 2);
+    const centerRow = Math.floor(rows / 2);
 
     state.rhythmGrid = {
       mode: "freestyle",
       phase: "response",
-      cols: 5,
-      rows: 3,
+      cols,
+      rows,
+      rowArrowCount,
+      colArrowCount,
       beatDuration,
-      soulCol: 2,
-      soulRow: 1,
+      soulCol: centerCol,
+      soulRow: centerRow,
       nextCueBeat: firstDownbeat,
       cues: [],
       cueCount: 0
     };
 
-    state.soul.x = rhythmGridX(2);
-    state.soul.y = rhythmGridY(1);
+    state.soul.x = rhythmGridX(centerCol);
+    state.soul.y = rhythmGridY(centerRow);
   }
 
   function beginVampireGridAttack(config) {
@@ -2294,6 +2307,7 @@
     const attackDelayBeats = Number.isFinite(config.attackDelayBeats)
       ? Math.max(0.5, config.attackDelayBeats)
       : 2;
+    const seekSoul = config.seekSoul === true;
     const vampireCount = Number.isInteger(config.vampireCount)
       ? Math.min(4, Math.max(2, config.vampireCount))
       : 2;
@@ -2332,7 +2346,8 @@
         ...start,
         fromCol: start.col,
         fromRow: start.row,
-        movedAtBeat: null
+        movedAtBeat: null,
+        seekSoul
       })),
       cues: []
     };
@@ -2499,7 +2514,14 @@
   function hurtForMissedRhythmStep() {
     const beastDodged = consumeBeastDodge();
     if (!beastDodged) {
-      damageRandomLivingPlayer(currentAttackDamage());
+      const grid = state.rhythmGrid;
+      const isLineDance = grid && !grid.mode && Array.isArray(grid.danceEvents);
+      const damageHits = isLineDance && Number.isInteger(grid.damageHits) ? grid.damageHits : 0;
+      const damage = isLineDance
+        ? [10, 7, 5, 3][Math.min(damageHits, 3)]
+        : currentAttackDamage();
+      damageRandomLivingPlayer(damage);
+      if (isLineDance) grid.damageHits = damageHits + 1;
       playSound(sounds.playerHurt);
       state.shake = 10;
     }
@@ -2522,8 +2544,14 @@
       const firstCue = grid.cueCount === 0;
       grid.cues.push({
         spawnBeat: grid.nextCueBeat,
-        rows: firstCue ? [0, 2] : randomDistinctIndexes(2, 3),
-        cols: randomDistinctIndexes(2, 5, firstCue ? [2] : []),
+        rows: firstCue && grid.rowArrowCount === 2
+          ? [0, grid.rows - 1]
+          : randomDistinctIndexes(grid.rowArrowCount, grid.rows),
+        cols: randomDistinctIndexes(
+          grid.colArrowCount,
+          grid.cols,
+          firstCue && grid.colArrowCount < grid.cols ? [Math.floor(grid.cols / 2)] : []
+        ),
         fired: false
       });
       grid.cueCount++;
