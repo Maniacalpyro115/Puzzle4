@@ -3387,10 +3387,41 @@
     state.enemyDialogTimer++;
 
     if (state.enemyDialogTimer >= state.enemyDialogDuration) {
-      const onComplete = state.enemyDialogOnComplete || beginEnemyAttack;
-      state.enemyDialogOnComplete = null;
-      onComplete();
+      finishEnemyDialog();
     }
+  }
+
+  function finishEnemyDialog() {
+    const onComplete = state.enemyDialogOnComplete || beginEnemyAttack;
+    state.enemyDialogOnComplete = null;
+    onComplete();
+  }
+
+  function skipActiveEnemyDialog() {
+    if (state.phase === PHASE.ENEMY_DIALOG) {
+      finishEnemyDialog();
+      return true;
+    }
+
+    if (
+      state.phase === PHASE.TURN_EVENT &&
+      state.turnEvent.step &&
+      state.turnEvent.step.type === "enemyDialog"
+    ) {
+      advanceTurnEvent();
+      return true;
+    }
+
+    if (
+      state.phase === PHASE.DEFEAT_DISSOLVE &&
+      state.defeatDissolve.timer < state.defeatDissolve.dialogDuration
+    ) {
+      state.defeatDissolve.timer = state.defeatDissolve.dialogDuration;
+      state.enemyDialogTimer = state.defeatDissolve.dialogDuration;
+      return true;
+    }
+
+    return false;
   }
 
   function updateTurnEvent() {
@@ -4422,7 +4453,9 @@
     const down = input.down;
     const mouseClick = input.mouseClick;
 
-    if (state.phase === PHASE.INTRO) {
+    if (enter && skipActiveEnemyDialog()) {
+      playSound(sounds.menuSelect);
+    } else if (state.phase === PHASE.INTRO) {
       updatePartySelection({ confirm, cancel, left, right, up, down, mouseClick });
     } else if (state.phase === PHASE.MENU) {
       if (cancel) {
