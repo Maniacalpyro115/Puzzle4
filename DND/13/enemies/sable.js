@@ -875,7 +875,7 @@ window.ENEMY_DATA = {
     loopStart: 8.102,
     loopEnd: 186.117,
   },
-  maxHP: 1,
+  maxHP: 850,
   hitSprite: "default",
 
   introMessage: "* SABLE fails to load correctly.",
